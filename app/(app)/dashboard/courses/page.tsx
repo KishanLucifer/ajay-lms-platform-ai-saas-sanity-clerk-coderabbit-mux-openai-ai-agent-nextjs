@@ -25,24 +25,51 @@ export default async function MyCoursesPage() {
     completedLessons: number;
   };
 
-  const startedCourses = courses.reduce<CourseWithProgress[]>((acc, course) => {
-    const { total, completed } = (course.modules ?? []).reduce(
-      (stats, m) =>
-        (m.lessons ?? []).reduce(
-          (s, l) => ({
-            total: s.total + 1,
-            completed: s.completed + (l.completedBy?.includes(user.id) ? 1 : 0),
-          }),
-          stats,
-        ),
-      { total: 0, completed: 0 },
-    );
+  // const startedCourses = courses.reduce<CourseWithProgress[]>((acc, course) => {
+  //   const { total, completed } = (course.modules ?? []).reduce(
+  //     (stats, m) =>
+  //       (m.lessons ?? []).reduce(
+  //         (s, l) => ({
+  //           total: s.total + 1,
+  //           completed: s.completed + (l.completedBy?.includes(user.id) ? 1 : 0),
+  //         }),
+  //         stats,
+  //       ),
+  //     { total: 0, completed: 0 },
+  //   );
 
-    if (completed > 0) {
-      acc.push({ ...course, totalLessons: total, completedLessons: completed });
-    }
-    return acc;
-  }, []);
+  //   if (completed > 0) {
+  //     acc.push({ ...course, totalLessons: total, completedLessons: completed });
+  //   }
+  //   return acc;
+  // }, []);
+  const startedCourses = courses.reduce(
+    (acc: CourseWithProgress[], course: Course) => {
+      const { total, completed } = (course.modules ?? []).reduce(
+        (stats: { total: number; completed: number }, m: any) =>
+          (m.lessons ?? []).reduce(
+            (s: { total: number; completed: number }, l: any) => ({
+              total: s.total + 1,
+              completed:
+                s.completed + (l.completedBy?.includes(user.id) ? 1 : 0),
+            }),
+            stats
+          ),
+        { total: 0, completed: 0 }
+      );
+
+      if (completed > 0) {
+        acc.push({
+          ...course,
+          totalLessons: total,
+          completedLessons: completed,
+        });
+      }
+
+      return acc;
+    },
+    [] as CourseWithProgress[]
+  );
 
   return (
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
@@ -81,7 +108,7 @@ export default async function MyCoursesPage() {
 
         {startedCourses.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {startedCourses.map((course) => (
+            {startedCourses.map((course: CourseWithProgress) => (
               <CourseCard
                 key={course.slug!.current!}
                 slug={{ current: course.slug!.current! }}
