@@ -4,8 +4,8 @@ import { redirect } from "next/navigation";
 import { BookOpen, Sparkles, ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { CourseList } from "@/components/courses";
-import { sanityFetch } from "@/sanity/lib/live";
-import { DASHBOARD_COURSES_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity-server/lib/live";
+import { DASHBOARD_COURSES_QUERY } from "@/sanity-server/lib/queries";
 import { getUserTier } from "@/lib/course-access";
 
 export default async function DashboardPage() {
@@ -108,8 +108,7 @@ export default async function DashboardPage() {
           {userTier !== "ultra" && (
             <Link
               href="/pricing"
-              className="p-6 rounded-xl bg-gradient-to-br from-violet-600/20 to-fuchsia-600/20 border border-violet-500/30 hover:border-violet-500/50 transition-colors group"
-            >
+              className="p-6 rounded-xl bg-gradient-to-br from-violet-600/20 to-fuchsia-600/20 border border-violet-500/30 hover:border-violet-500/50 transition-colors group">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-lg font-semibold text-white group-hover:text-violet-300 transition-colors">

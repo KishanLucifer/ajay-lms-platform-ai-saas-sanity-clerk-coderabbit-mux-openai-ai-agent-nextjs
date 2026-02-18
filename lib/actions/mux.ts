@@ -3,7 +3,7 @@
 import Mux from "@mux/mux-node";
 import jwt from "jsonwebtoken";
 import { formatSigningKey } from "@/lib/mux";
-import { writeClient } from "@/sanity/lib/client";
+import { writeClient } from "@/sanity-server/lib/client";
 
 const mux = new Mux({
   tokenId: process.env.MUX_TOKEN_ID,

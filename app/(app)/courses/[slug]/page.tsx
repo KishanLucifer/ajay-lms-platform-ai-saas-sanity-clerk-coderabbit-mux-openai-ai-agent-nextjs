@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { Header } from "@/components/Header";
 import { CourseContent } from "@/components/courses";
-import { sanityFetch } from "@/sanity/lib/live";
-import { COURSE_WITH_MODULES_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity-server/lib/live";
+import { COURSE_WITH_MODULES_QUERY } from "@/sanity-server/lib/queries";
 
 interface CoursePageProps {
   params: Promise<{ slug: string }>;
@@ -55,4 +55,3 @@ export default async function CoursePage({ params }: CoursePageProps) {
     </div>
   );
 }
-

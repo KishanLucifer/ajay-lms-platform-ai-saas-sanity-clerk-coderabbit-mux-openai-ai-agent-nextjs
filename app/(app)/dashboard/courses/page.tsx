@@ -3,8 +3,8 @@ import { redirect } from "next/navigation";
 import { BookOpen } from "lucide-react";
 import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/courses";
-import { sanityFetch } from "@/sanity/lib/live";
-import { DASHBOARD_COURSES_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity-server/lib/live";
+import { DASHBOARD_COURSES_QUERY } from "@/sanity-server/lib/queries";
 
 export default async function MyCoursesPage() {
   const user = await currentUser();

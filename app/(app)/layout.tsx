@@ -1,4 +1,4 @@
-import { SanityLive } from "@/sanity/lib/live";
+import { SanityLive } from "@/sanity-server/lib/live";
 import { ClerkProvider } from "@clerk/nextjs";
 import { TutorWidget } from "@/components/tutor";
 

@@ -6,12 +6,12 @@
 
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
+import { structure } from "./sanity-server/structure";
 import { structureTool } from "sanity/structure";
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
-import { apiVersion, dataset, projectId } from "./sanity/env";
-import { schema } from "./sanity/schemaTypes";
-import { structure } from "./sanity/structure";
+import { apiVersion } from "./sanity-server/env";
+import { schema } from "./sanity-server/schemaTypes";
 import { muxInput } from "sanity-plugin-mux-input";
 
 export default defineConfig({

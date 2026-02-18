@@ -2,7 +2,7 @@
 
 import { auth } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
-import { writeClient } from "@/sanity/lib/client";
+import { writeClient } from "@/sanity-server/lib/client";
 
 export async function toggleCourseCompletion(
   courseId: string,
@@ -38,4 +38,3 @@ export async function toggleCourseCompletion(
     return { success: false, isCompleted: !markComplete };
   }
 }
-

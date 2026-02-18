@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { Header } from "@/components/Header";
 import { LessonPageContent } from "@/components/lessons";
-import { sanityFetch } from "@/sanity/lib/live";
-import { LESSON_BY_SLUG_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity-server/lib/live";
+import { LESSON_BY_SLUG_QUERY } from "@/sanity-server/lib/queries";
 
 interface LessonPageProps {
   params: Promise<{ slug: string }>;

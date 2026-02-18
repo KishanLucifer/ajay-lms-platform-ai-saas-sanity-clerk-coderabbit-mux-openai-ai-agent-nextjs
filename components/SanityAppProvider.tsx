@@ -1,7 +1,7 @@
 "use client";
 
 import { SanityApp } from "@sanity/sdk-react";
-import { dataset, projectId } from "@/sanity/env";
+import { dataset, projectId } from "@/sanity-server/env";
 
 function SanityAppProvider({ children }: { children: React.ReactNode }) {
   return (
@@ -13,8 +13,7 @@ function SanityAppProvider({ children }: { children: React.ReactNode }) {
         },
       ]}
       // We handle the loading state in the Providers component by showing a loading indicator via the dynamic import
-      fallback={<div />}
-    >
+      fallback={<div />}>
       {children}
     </SanityApp>
   );

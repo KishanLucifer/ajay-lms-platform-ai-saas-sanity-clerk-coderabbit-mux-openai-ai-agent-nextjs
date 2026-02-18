@@ -1,7 +1,7 @@
 "use client";
 
 import { ModuleList } from "@/components/admin/documents/ModuleList";
-import { projectId, dataset } from "@/sanity/env";
+import { projectId, dataset } from "@/sanity-server/env";
 
 export default function ModulesPage() {
   return <ModuleList projectId={projectId} dataset={dataset} />;

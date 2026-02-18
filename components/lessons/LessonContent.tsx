@@ -1,6 +1,6 @@
 import { PortableText, type PortableTextComponents } from "@portabletext/react";
 import type { TypedObject } from "@portabletext/types";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity-server/lib/image";
 import Image from "next/image";
 
 const components: PortableTextComponents = {
@@ -57,8 +57,7 @@ const components: PortableTextComponents = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors"
-      >
+        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors">
         {children}
       </a>
     ),

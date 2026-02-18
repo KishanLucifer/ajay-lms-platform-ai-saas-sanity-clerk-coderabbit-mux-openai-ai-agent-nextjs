@@ -5,7 +5,7 @@ import type {
   RenderListItemFunction,
   RenderAnnotationFunction,
 } from "@portabletext/editor";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity-server/lib/image";
 import Image from "next/image";
 
 /**
@@ -96,8 +96,7 @@ export const renderAnnotation: RenderAnnotationFunction = (props) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors cursor-pointer"
-      >
+        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors cursor-pointer">
         {props.children}
       </a>
     );

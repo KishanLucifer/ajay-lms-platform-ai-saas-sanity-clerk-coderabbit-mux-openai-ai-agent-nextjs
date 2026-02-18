@@ -1,7 +1,7 @@
 import { tool } from "ai";
 import { z } from "zod";
 import { defineQuery } from "next-sanity";
-import { sanityFetch } from "@/sanity/lib/live";
+import { sanityFetch } from "@/sanity-server/lib/live";
 
 // Simple but effective search query - searches all courses and filters in JS for reliability
 const ALL_COURSES_WITH_CONTENT_QUERY = defineQuery(`*[

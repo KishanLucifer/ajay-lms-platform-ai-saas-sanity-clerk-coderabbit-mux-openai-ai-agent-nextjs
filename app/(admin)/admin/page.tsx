@@ -19,7 +19,7 @@ import {
   AlertCircle,
   CheckCircle2,
 } from "lucide-react";
-import { projectId, dataset } from "@/sanity/env";
+import { projectId, dataset } from "@/sanity-server/env";
 
 interface StatCardProps {
   title: string;
@@ -57,8 +57,7 @@ function StatCard({
       <div className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:bg-zinc-800/50 hover:border-zinc-700 transition-all">
         <div className="flex items-center justify-between mb-4">
           <div
-            className={`flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br ${gradient} shadow-lg`}
-          >
+            className={`flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br ${gradient} shadow-lg`}>
             <Icon className={`h-5 w-5 ${iconColor}`} />
           </div>
           <ArrowRight className="h-4 w-4 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1 transition-all" />
@@ -125,12 +124,10 @@ function QuickActionLink({
   return (
     <Link
       href={href}
-      className="group p-4 rounded-xl bg-zinc-900/30 border border-zinc-800 hover:bg-zinc-800/50 hover:border-zinc-700 transition-all block"
-    >
+      className="group p-4 rounded-xl bg-zinc-900/30 border border-zinc-800 hover:bg-zinc-800/50 hover:border-zinc-700 transition-all block">
       <div className="flex items-center gap-3">
         <div
-          className={`flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br ${gradient} shadow-md`}
-        >
+          className={`flex h-9 w-9 items-center justify-center rounded-lg bg-linear-to-br ${gradient} shadow-md`}>
           <Icon className="h-4 w-4 text-white" />
         </div>
         <div className="flex-1 min-w-0">
@@ -214,8 +211,7 @@ function ContentHealthContent() {
               <AlertCircle className="h-4 w-4 text-zinc-600" />
             )}
             <span
-              className={`text-sm ${check.passed ? "text-zinc-400" : "text-zinc-600"}`}
-            >
+              className={`text-sm ${check.passed ? "text-zinc-400" : "text-zinc-600"}`}>
               {check.label}
             </span>
             <span className="text-xs text-zinc-600 ml-auto">{check.count}</span>
@@ -242,8 +238,7 @@ export default function AdminDashboard() {
         <Link href="/studio" target="_blank">
           <Button
             variant="outline"
-            className="border-zinc-700 bg-zinc-900/50 text-zinc-300 hover:bg-zinc-800 hover:text-white"
-          >
+            className="border-zinc-700 bg-zinc-900/50 text-zinc-300 hover:bg-zinc-800 hover:text-white">
             <ExternalLink className="h-4 w-4 mr-2" />
             Open Studio
           </Button>
@@ -315,8 +310,7 @@ export default function AdminDashboard() {
                     </div>
                   ))}
                 </div>
-              }
-            >
+              }>
               <ContentHealthContent />
             </Suspense>
           </div>

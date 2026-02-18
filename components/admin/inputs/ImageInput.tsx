@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ImageIcon, Upload, X, Loader2 } from "lucide-react";
 import { uploadImage } from "@/lib/actions/images";
-import { urlFor } from "@/sanity/lib/image";
+import { urlFor } from "@/sanity-server/lib/image";
 import type { Course } from "@/sanity.types";
 import Image from "next/image";
 
@@ -114,8 +114,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
       <div
         className={`relative rounded-lg border border-zinc-700 bg-zinc-800/30 ${
           isUploading ? "pointer-events-none opacity-60" : ""
-        }`}
-      >
+        }`}>
         {hasImage && imageUrl ? (
           <div className="relative group">
             <Image
@@ -133,8 +132,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
                 size="sm"
                 onClick={handleClick}
                 disabled={isUploading}
-                className="bg-zinc-800 hover:bg-zinc-700"
-              >
+                className="bg-zinc-800 hover:bg-zinc-700">
                 <Upload className="h-4 w-4 mr-1" />
                 Replace
               </Button>
@@ -143,8 +141,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
                 variant="destructive"
                 size="sm"
                 onClick={handleRemove}
-                disabled={isUploading}
-              >
+                disabled={isUploading}>
                 <X className="h-4 w-4 mr-1" />
                 Remove
               </Button>
@@ -161,8 +158,7 @@ function ImageInputField({ path, label, ...handle }: ImageInputProps) {
             type="button"
             onClick={handleClick}
             disabled={isUploading}
-            className="w-full py-8 flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-400 transition-colors cursor-pointer"
-          >
+            className="w-full py-8 flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-400 transition-colors cursor-pointer">
             {isUploading ? (
               <>
                 <Loader2 className="h-10 w-10 mb-2 animate-spin text-violet-500" />

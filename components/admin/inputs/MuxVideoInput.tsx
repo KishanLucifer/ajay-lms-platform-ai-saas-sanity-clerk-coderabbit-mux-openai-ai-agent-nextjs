@@ -87,7 +87,7 @@ function MuxVideoInputField({ path, label, ...handle }: MuxVideoInputProps) {
   useEffect(() => {
     if (assetRef && !assetData) {
       // Fetch the asset document using server action
-      import("@/sanity/lib/client").then(({ client }) => {
+      import("@/sanity-server/lib/client").then(({ client }) => {
         client
           .fetch<MuxAssetData>(`*[_id == $id][0]{ playbackId, status, data }`, {
             id: assetRef,
@@ -276,8 +276,7 @@ function MuxVideoInputField({ path, label, ...handle }: MuxVideoInputProps) {
                   variant="ghost"
                   size="sm"
                   onClick={handleReplace}
-                  className="h-7 px-2 text-xs text-zinc-400 hover:text-white"
-                >
+                  className="h-7 px-2 text-xs text-zinc-400 hover:text-white">
                   <Upload className="h-3.5 w-3.5 mr-1" />
                   Replace
                 </Button>
@@ -285,8 +284,7 @@ function MuxVideoInputField({ path, label, ...handle }: MuxVideoInputProps) {
                   variant="ghost"
                   size="sm"
                   onClick={handleRemove}
-                  className="h-7 px-2 text-xs text-zinc-400 hover:text-red-400"
-                >
+                  className="h-7 px-2 text-xs text-zinc-400 hover:text-red-400">
                   <Trash2 className="h-3.5 w-3.5 mr-1" />
                   Remove
                 </Button>
@@ -308,8 +306,7 @@ function MuxVideoInputField({ path, label, ...handle }: MuxVideoInputProps) {
             variant="ghost"
             size="sm"
             onClick={handleCancelReplace}
-            className="text-zinc-400 hover:text-white h-7 px-2"
-          >
+            className="text-zinc-400 hover:text-white h-7 px-2">
             Cancel
           </Button>
         </div>
@@ -377,8 +374,7 @@ function MuxVideoInputField({ path, label, ...handle }: MuxVideoInputProps) {
               variant="outline"
               size="sm"
               onClick={handleRetry}
-              className="mt-4 border-zinc-700 text-zinc-300 hover:bg-zinc-800"
-            >
+              className="mt-4 border-zinc-700 text-zinc-300 hover:bg-zinc-800">
               <RefreshCw className="h-4 w-4 mr-1.5" />
               Try again
             </Button>

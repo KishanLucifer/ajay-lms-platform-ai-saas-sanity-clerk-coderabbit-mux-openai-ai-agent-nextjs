@@ -1,7 +1,6 @@
 import { BlockContentIcon, BookIcon, PlayIcon, TagIcon } from "@sanity/icons";
-import type { StructureResolver } from "sanity/structure";
 
-export const structure: StructureResolver = (S, context) =>
+export const structure = (S: any) =>
   S.list()
     .title("LMS Content")
     .items([
@@ -24,7 +23,7 @@ export const structure: StructureResolver = (S, context) =>
         .child(
           S.documentTypeList("category")
             .title("Category")
-            .child((categoryId) =>
+            .child((categoryId: string) =>
               S.list()
                 .title("Category")
                 .items([

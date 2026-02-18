@@ -10,12 +10,12 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { projectId, dataset } from "@/sanity/env";
+import { projectId, dataset } from "@/sanity-server/env";
 import { defineQuery } from "groq";
 
 // Pre-defined queries
 const COURSE_QUERY = defineQuery(
-  `*[_type == "course" && _id match "*" + $baseId][0]{ title }`,
+  `*[_type == "course" && _id match "*" + $baseId][0]{ title }`
 );
 
 const MODULE_QUERY = defineQuery(`{
@@ -30,7 +30,7 @@ const LESSON_QUERY = defineQuery(`{
 }`);
 
 const CATEGORY_QUERY = defineQuery(
-  `*[_type == "category" && _id match "*" + $baseId][0]{ title }`,
+  `*[_type == "category" && _id match "*" + $baseId][0]{ title }`
 );
 
 const NULL_QUERY = defineQuery(`null`);
@@ -153,8 +153,7 @@ function AdminBreadcrumb() {
           return (
             <span
               key={`${item.href}-${item.label}`}
-              className="flex items-center gap-2"
-            >
+              className="flex items-center gap-2">
               {index > 0 && <BreadcrumbSeparator className="text-zinc-600" />}
               <BreadcrumbItem>
                 {isLast ? (
@@ -164,8 +163,7 @@ function AdminBreadcrumb() {
                 ) : (
                   <BreadcrumbLink
                     href={item.href}
-                    className="hover:text-zinc-300 truncate max-w-[120px]"
-                  >
+                    className="hover:text-zinc-300 truncate max-w-[120px]">
                     {item.label}
                   </BreadcrumbLink>
                 )}

@@ -16,8 +16,11 @@ import {
   Sparkles,
   LayoutDashboard,
 } from "lucide-react";
-import { sanityFetch } from "@/sanity/lib/live";
-import { FEATURED_COURSES_QUERY, STATS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity-server/lib/live";
+import {
+  FEATURED_COURSES_QUERY,
+  STATS_QUERY,
+} from "@/sanity-server/lib/queries";
 import { currentUser } from "@clerk/nextjs/server";
 
 export default async function Home() {

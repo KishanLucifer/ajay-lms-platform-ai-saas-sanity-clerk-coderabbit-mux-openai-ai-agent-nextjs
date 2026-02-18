@@ -1,13 +1,15 @@
 "use server";
 
-import { writeClient } from "@/sanity/lib/client";
+import { writeClient } from "@/sanity-server/lib/client";
 
 interface UploadImageResult {
   assetId: string | null;
   error?: string;
 }
 
-export async function uploadImage(formData: FormData): Promise<UploadImageResult> {
+export async function uploadImage(
+  formData: FormData
+): Promise<UploadImageResult> {
   const file = formData.get("file") as File | null;
 
   if (!file) {
@@ -19,7 +21,8 @@ export async function uploadImage(formData: FormData): Promise<UploadImageResult
   if (!validTypes.includes(file.type)) {
     return {
       assetId: null,
-      error: "Invalid file type. Please upload a JPEG, PNG, GIF, or WebP image.",
+      error:
+        "Invalid file type. Please upload a JPEG, PNG, GIF, or WebP image.",
     };
   }
 
@@ -53,7 +56,9 @@ export async function uploadImage(formData: FormData): Promise<UploadImageResult
   }
 }
 
-export async function deleteImage(assetId: string): Promise<{ success: boolean; error?: string }> {
+export async function deleteImage(
+  assetId: string
+): Promise<{ success: boolean; error?: string }> {
   if (!assetId) {
     return { success: false, error: "No asset ID provided" };
   }
@@ -69,4 +74,3 @@ export async function deleteImage(assetId: string): Promise<{ success: boolean; 
     return { success: false, error: errorMessage };
   }
 }
-
