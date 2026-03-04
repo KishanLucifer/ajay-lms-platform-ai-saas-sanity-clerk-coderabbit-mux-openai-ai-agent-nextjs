@@ -69,7 +69,7 @@ export default async function Home() {
               style={{ animationDelay: "0.1s" }}>
               <Sparkles className="w-4 h-4 text-violet-400" />
               <span className="text-sm text-violet-300">
-                Learn to code with real-world projects
+                Code Like a Professional
               </span>
             </div>
 
@@ -77,9 +77,9 @@ export default async function Home() {
             <h1
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tight leading-[0.95] mb-8 animate-fade-in"
               style={{ animationDelay: "0.2s" }}>
-              <span className="block text-white">Master coding</span>
-              <span className="block bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
-                the modern way
+              <span className="block text-white">Future-Ready Coding</span>
+              <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+                the Professonal way
               </span>
             </h1>
 
@@ -87,10 +87,10 @@ export default async function Home() {
             <p
               className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-10 leading-relaxed animate-fade-in"
               style={{ animationDelay: "0.3s" }}>
-              Join Ajay&apos;s Academy and learn from expertly crafted courses,
-              modules, and hands-on lessons. From free fundamentals to{" "}
-              <span className="text-fuchsia-400">Pro exclusives</span> and{" "}
-              <span className="text-cyan-400">Ultra gems</span>.
+              Join EduX&apos;s Academy and learn through structured, hands-on
+              programs designed for real job outcomes.{" "}
+              <span className="text-fuchsia-400">Pro features</span> and{" "}
+              <span className="text-cyan-400">Elite power</span>.
             </p>
 
             {/* CTA Buttons */}
@@ -102,7 +102,7 @@ export default async function Home() {
                   <Link href="/dashboard">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold">
+                      className="bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold">
                       <LayoutDashboard className="w-4 h-4 mr-2" />
                       Go to Dashboard
                     </Button>
@@ -122,9 +122,9 @@ export default async function Home() {
                   <Link href="/pricing">
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold">
+                      className="bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold">
                       <Play className="w-4 h-4 mr-2 fill-white" />
-                      Start Learning Free
+                      Start Free Trial
                     </Button>
                   </Link>
                   <Link href="/dashboard">
@@ -133,7 +133,7 @@ export default async function Home() {
                       size="lg"
                       className="border-zinc-700 bg-white/5 text-white px-8 h-12 text-base hover:bg-white/10 hover:text-white">
                       <BookOpen className="w-4 h-4 mr-2" />
-                      Browse Courses
+                      See All Courses
                     </Button>
                   </Link>
                 </>
@@ -176,7 +176,7 @@ export default async function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                tier: "Free",
+                tier: "Foundation Plan",
                 icon: Rocket,
                 color: "emerald",
                 gradient: "from-emerald-500 to-teal-600",
@@ -190,7 +190,7 @@ export default async function Home() {
                 ],
               },
               {
-                tier: "Pro",
+                tier: "Professional",
                 icon: Crown,
                 color: "violet",
                 gradient: "from-violet-500 to-fuchsia-600",
@@ -206,7 +206,7 @@ export default async function Home() {
                 popular: true,
               },
               {
-                tier: "Ultra",
+                tier: "Elite",
                 icon: Trophy,
                 color: "cyan",
                 gradient: "from-cyan-400 to-blue-600",
@@ -226,12 +226,12 @@ export default async function Home() {
                 key={plan.tier}
                 className={`relative p-8 rounded-2xl ${plan.bgGlow} border ${plan.borderColor} ${plan.popular ? "ring-2 ring-violet-500/50" : ""} transition-all duration-300 hover:scale-[1.02]`}>
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-xs font-semibold">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-linear-to-r from-violet-500 to-fuchsia-500 text-xs font-semibold">
                     Most Popular
                   </div>
                 )}
                 <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${plan.gradient} flex items-center justify-center mb-4 shadow-lg`}>
+                  className={`w-12 h-12 rounded-xl bg-linear-to-br ${plan.gradient} flex items-center justify-center mb-4 shadow-lg`}>
                   <plan.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">{plan.tier}</h3>
@@ -251,15 +251,25 @@ export default async function Home() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <Link href="/pricing">
+              <Button
+                variant="outline"
+                className="border-zinc-700 bg-white/5 text-white hover:bg-white/10 hover:text-white">
+                Pricing In Detail
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
         </section>
 
         {/* Featured Courses */}
         <section id="courses" className="px-6 lg:px-12 py-20 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Courses built for{" "}
-              <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                real results
+              Learn Skills That Deliver{" "}
+              <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Real Impact
               </span>
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
@@ -288,7 +298,7 @@ export default async function Home() {
               <Button
                 variant="outline"
                 className="border-zinc-700 bg-white/5 text-white hover:bg-white/10 hover:text-white">
-                View All Courses
+                See Full Catalog
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </Link>
@@ -301,8 +311,8 @@ export default async function Home() {
           className="px-6 lg:px-12 py-20 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
-              Students{" "}
-              <span className="bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              Developers{" "}
+              <span className="bg-linear-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
                 love it
               </span>
             </h2>
@@ -314,14 +324,14 @@ export default async function Home() {
                 name: "Alex Chen",
                 role: "Junior Developer",
                 content:
-                  "Ajay's teaching style is incredible. I went from knowing nothing to landing my first dev job in 6 months!",
+                  "EduX's teaching style is incredible. I went from knowing nothing to landing my first dev job in 6 months!",
                 avatar: "🧑‍💻",
               },
               {
                 name: "Sarah Miller",
                 role: "Freelancer",
                 content:
-                  "The Ultra tier is worth every penny. The exclusive content and 1-on-1 sessions transformed my career.",
+                  "The Elite tier is worth every penny. The exclusive content and 1-on-1 sessions transformed my career.",
                 avatar: "👩‍💼",
               },
               {
@@ -362,25 +372,25 @@ export default async function Home() {
 
         {/* CTA Section */}
         <section className="px-6 lg:px-12 py-20 max-w-7xl mx-auto">
-          <div className="relative rounded-3xl bg-gradient-to-br from-violet-600/20 via-fuchsia-600/10 to-cyan-600/20 border border-white/10 p-12 md:p-20 text-center overflow-hidden">
+          <div className="relative rounded-3xl bg-linear-to-br from-violet-600/20 via-fuchsia-600/10 to-cyan-600/20 border border-white/10 p-12 md:p-20 text-center overflow-hidden">
             {/* Animated gradient border */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-violet-500/20 via-fuchsia-500/20 to-cyan-500/20 blur-xl" />
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-violet-500/20 via-fuchsia-500/20 to-cyan-500/20 blur-xl" />
 
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-violet-500/30">
+              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-violet-500/30">
                 <Rocket className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Ready to level up your skills?
+                Start Your Developer Journey Today
               </h2>
               <p className="text-zinc-400 text-lg max-w-xl mx-auto mb-10">
-                Start with free courses or unlock everything with Pro and Ultra.
-                Your coding journey begins now.
+                Start with free courses or unlock everything with Professional
+                and Elite. Your coding journey begins now.
               </p>
               <Link href="/pricing">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-10 h-14 text-lg font-semibold">
+                  className="bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-10 h-14 text-lg font-semibold">
                   View Pricing
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -393,10 +403,10 @@ export default async function Home() {
         <footer className="px-6 lg:px-12 py-12 border-t border-zinc-800/50 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
                 <Code2 className="w-4 h-4 text-white" />
               </div>
-              <span className="font-bold">Ajay&apos;s Academy</span>
+              <span className="font-bold">EduX&apos;s Academy</span>
             </div>
             <div className="flex items-center gap-8 text-sm text-zinc-500">
               <Link href="#" className="hover:text-white transition-colors">
@@ -410,7 +420,7 @@ export default async function Home() {
               </Link>
             </div>
             <p className="text-sm text-zinc-600">
-              © 2024 Ajay&apos;s Academy. All rights reserved.
+              © 2024 EduX&apos;s Academy. All rights reserved.
             </p>
           </div>
         </footer>
