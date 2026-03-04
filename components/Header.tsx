@@ -25,6 +25,7 @@ import {
   Menu,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 const loggedOutLinks = [
   { href: "/#courses", label: "Courses" },
@@ -37,6 +38,17 @@ export function Header() {
   const { has } = useAuth();
 
   const isUltra = has?.({ plan: "ultra" });
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [pathname]);
 
   const loggedInLinks = [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -48,9 +60,10 @@ export function Header() {
   ];
 
   return (
-    <nav className="relative z-10 flex items-center justify-between px-6 lg:px-12 py-5 max-w-7xl mx-auto">
+    // <nav className="relative z-10 flex items-center justify-between px-6 lg:px-12 py-5 max-w-7xl mx-auto">
+    <nav className="relative z-10 grid grid-cols-3 items-center h-16 px-4 lg:px-12 max-w-7xl mx-auto">
       {/* Logo - links to dashboard when logged in, home when logged out */}
-      <div>
+      <div className="flex items-center">
         <SignedIn>
           <Link href="/dashboard" className="flex items-center gap-3 group">
             <Logo />
@@ -64,7 +77,8 @@ export function Header() {
       </div>
 
       {/* Center Navigation - absolute positioning for perfect center on desktop */}
-      <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+      {/* <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"> */}
+      <div className="hidden md:flex justify-center items-center gap-8 text-sm text-zinc-400">
         <SignedOut>
           <div className="flex items-center gap-8 text-sm text-zinc-400">
             {loggedOutLinks.map((link) => (
@@ -94,7 +108,7 @@ export function Header() {
                     "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                     isActive
                       ? "bg-violet-500/10 text-violet-300"
-                      : "text-zinc-400 hover:text-white hover:bg-zinc-800/50"
+                      : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
                   )}>
                   <Icon className="w-4 h-4" />
                   {link.label}
@@ -106,7 +120,8 @@ export function Header() {
       </div>
 
       {/* Right section */}
-      <div className="flex items-center gap-3">
+      {/* <div className="flex items-center gap-3"> */}
+      <div className="flex items-end gap-0 ml-38 md:ml-auto lg:ml-auto">
         <SignedOut>
           {/* Mobile: Dropdown menu */}
           <DropdownMenu>
@@ -136,12 +151,12 @@ export function Header() {
           <SignInButton mode="modal">
             <Button
               variant="ghost"
-              className="text-zinc-400 hover:text-white hover:bg-white/5">
+              className="h-9 px-0 lg:px-6 text-sm cursor-pointer text-zinc-400 hover:text-white hover:bg-white/5">
               Sign in
             </Button>
           </SignInButton>
           <Link href="/pricing" className="hidden sm:block">
-            <Button className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-lg shadow-violet-600/25">
+            <Button className="bg-linear-to-r cursor-pointer from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-lg shadow-violet-600/25">
               Start Learning
             </Button>
           </Link>
@@ -174,7 +189,7 @@ export function Header() {
                       href={link.href}
                       className={cn(
                         "flex items-center gap-2 cursor-pointer",
-                        isActive ? "text-violet-300" : "text-zinc-300"
+                        isActive ? "text-violet-300" : "text-zinc-300",
                       )}>
                       <Icon className="w-4 h-4" />
                       {link.label}
@@ -202,10 +217,10 @@ function Logo() {
   return (
     <>
       <div className="relative">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow">
+        <div className="w-10 h-10 rounded-xl bg-linear-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow">
           <Code2 className="w-5 h-5 text-white" />
         </div>
-        <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+        <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-linear-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
           <Play className="w-2 h-2 text-white fill-white" />
         </div>
       </div>

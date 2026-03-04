@@ -1,3 +1,4 @@
+// "use client";
 import Link from "next/link";
 import { PricingTable } from "@clerk/nextjs";
 import {
@@ -15,13 +16,13 @@ export default function PricingPage() {
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
       {/* Animated gradient mesh background */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-violet-600/15 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-fuchsia-600/10 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-125 h-125 bg-fuchsia-600/10 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[80px] animate-pulse"
+          className="absolute top-[40%] right-[20%] w-100 h-100 bg-cyan-500/10 rounded-full blur-[80px] animate-pulse"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -49,7 +50,7 @@ export default function PricingPage() {
           </div>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
             Choose your{" "}
-            <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
               learning path
             </span>
           </h1>
@@ -201,7 +202,7 @@ export default function PricingPage() {
       <footer className="relative z-10 px-6 lg:px-12 py-12 border-t border-zinc-800/50 max-w-7xl mx-auto mt-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-linea-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
               <Code2 className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold">Sonny&apos;s Academy</span>
