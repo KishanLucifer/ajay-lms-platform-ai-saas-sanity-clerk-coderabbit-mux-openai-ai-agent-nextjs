@@ -6,8 +6,8 @@ import { TIER_FEATURES, TIER_STYLES, type Tier } from "@/lib/constants";
 // Muted gradient variants for background overlays
 const TIER_GRADIENT_MUTED: Record<Tier, string> = {
   free: "from-emerald-500/20 to-teal-600/20",
-  pro: "from-violet-500/20 to-fuchsia-600/20",
-  ultra: "from-cyan-400/20 to-blue-600/20",
+  pro: "from-green-500/20 to-emerald-600/20",
+  ultra: "from-lime-400/20 to-green-600/20",
 };
 
 interface GatedFallbackProps {

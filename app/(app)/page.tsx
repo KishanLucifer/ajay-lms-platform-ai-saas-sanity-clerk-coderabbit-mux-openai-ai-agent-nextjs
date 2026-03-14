@@ -67,9 +67,9 @@ export default async function Home() {
           <div className="flex flex-col items-center text-center">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-violet-500/20 mb-8 animate-fade-in"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-emerald-500/20 mb-8 animate-fade-in"
               style={{ animationDelay: "0.1s" }}>
-              <Sparkles className="w-4 h-4 text-violet-400" />
+              <Sparkles className="w-4 h-4 text-emerald-400" />
               <span className="text-sm text-green-300">
                 Code Like a Professional
               </span>
@@ -161,7 +161,7 @@ export default async function Home() {
               ].map((stat) => (
                 <div key={stat.label} className="flex flex-col items-center">
                   <div className="flex items-center gap-2 mb-1">
-                    <stat.icon className="w-4 h-4 text-violet-400" />
+                    <stat.icon className="w-4 h-4 text-emerald-400" />
                     <span className="text-2xl md:text-3xl font-bold text-white">
                       {stat.value}
                     </span>
@@ -228,7 +228,7 @@ export default async function Home() {
                 key={plan.tier}
                 className={`relative p-8 rounded-2xl ${plan.bgGlow} border ${plan.borderColor} ${plan.popular ? "ring-2 ring-violet-500/50" : ""} transition-all duration-300 hover:scale-[1.02]`}>
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-linear-to-r from-violet-500 to-fuchsia-500 text-xs font-semibold">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-linear-to-r from-emerald-500 to-teal-500 text-xs font-semibold">
                     Most Popular
                   </div>
                 )}
@@ -244,7 +244,7 @@ export default async function Home() {
                       key={feature}
                       className="flex items-center gap-2 text-sm text-zinc-300">
                       <CheckCircle2
-                        className={`w-4 h-4 ${plan.color === "emerald" ? "text-emerald-400" : plan.color === "violet" ? "text-violet-400" : "text-cyan-400"}`}
+                        className={`w-4 h-4 ${plan.color === "emerald" ? "text-emerald-400" : plan.color === "violet" ? "text-emerald-400" : "text-cyan-400"}`}
                       />
                       {feature}
                     </li>

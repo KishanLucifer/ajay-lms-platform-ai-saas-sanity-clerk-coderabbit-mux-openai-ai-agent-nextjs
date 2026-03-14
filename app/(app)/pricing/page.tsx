@@ -7,7 +7,16 @@ import {
   Sparkles,
   Loader2,
   Code2,
-  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
+  Cpu,
+  Zap,
+  Orbit,
+  Radar,
+  Hexagon,
+  Activity,
+  ArrowRightCircle,
+  ChevronRight,
+  Database,
+  Network,
 } from "lucide-react";
 import { TIER_FEATURES, getTierColorClasses } from "@/lib/constants";
 import { Header } from "@/components/Header";
@@ -17,9 +26,9 @@ export default function PricingPage() {
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
       {/* Animated gradient mesh background */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-violet-600/15 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-emerald-600/10 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-125 h-125 bg-fuchsia-600/10 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-125 h-125 bg-teal-600/10 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
         <div
@@ -43,8 +52,8 @@ export default function PricingPage() {
       <main className="relative z-10 px-6 lg:px-12 py-12 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-violet-500/20 mb-6">
-            <Sparkles className="w-4 h-4 text-violet-400" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-emerald-500/20 mb-6">
+            <Sparkles className="w-4 h-4 text-emerald-400" />
             <span className="text-sm text-green-300">
               Simple, transparent pricing
             </span>
@@ -69,7 +78,8 @@ export default function PricingPage() {
             return (
               <div
                 key={plan.tier}
-                className={`p-6 rounded-xl bg-zinc-900/30 border ${colorClasses.border}`}>
+                className={`p-6 rounded-xl bg-zinc-900/30 border ${colorClasses.border}`}
+              >
                 <h3 className={`text-lg font-bold mb-4 ${colorClasses.text}`}>
                   {plan.tier} includes:
                 </h3>
@@ -77,7 +87,8 @@ export default function PricingPage() {
                   {plan.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-2 text-sm text-zinc-300">
+                      className="flex items-start gap-2 text-sm text-zinc-300"
+                    >
                       <CheckCircle2
                         className={`w-4 h-4 mt-0.5 shrink-0 ${colorClasses.text}`}
                       />
@@ -186,13 +197,15 @@ export default function PricingPage() {
             Questions?{" "}
             <Link
               href="#"
-              className="text-violet-400 hover:text-green-300 underline underline-offset-4">
+              className="text-emerald-400 hover:text-green-300 underline underline-offset-4"
+            >
               Contact us
             </Link>{" "}
             or check out our{" "}
             <Link
               href="#"
-              className="text-violet-400 hover:text-green-300 underline underline-offset-4">
+              className="text-emerald-400 hover:text-green-300 underline underline-offset-4"
+            >
               FAQ
             </Link>
           </p>
@@ -206,7 +219,7 @@ export default function PricingPage() {
             <div className="w-8 h-8 rounded-lg bg-linea-to-br from-green-400 to-emerald-500 flex items-center justify-center">
               <Cpu className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold">Sonny&apos;s Academy</span>
+            <span className="font-bold">Edux&apos;s Academy</span>
           </div>
           <div className="flex items-center gap-8 text-sm text-zinc-500">
             <Link href="#" className="hover:text-white transition-colors">
@@ -220,7 +233,7 @@ export default function PricingPage() {
             </Link>
           </div>
           <p className="text-sm text-zinc-600">
-            2026 Ajay&apos;s Academy. All rights reserved.
+            2026 EduX&apos;s Academy. All rights reserved.
           </p>
         </div>
       </footer>

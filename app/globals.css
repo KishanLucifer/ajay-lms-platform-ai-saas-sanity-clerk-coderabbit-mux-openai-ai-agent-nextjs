@@ -191,6 +191,6 @@ div[role="alertdialog"] {
   }
 }
 
-.animate-scroll {
+@utility animate-scroll {
   animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 }

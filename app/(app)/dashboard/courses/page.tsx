@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/courses";
 import { sanityFetch } from "@/sanity-server/lib/live";
 import { DASHBOARD_COURSES_QUERY } from "@/sanity-server/lib/queries";
+import { getUserTier } from "@/lib/course-access";
+import Link from "next/link";
 
 export default async function MyCoursesPage() {
   const user = await currentUser();
@@ -13,10 +15,13 @@ export default async function MyCoursesPage() {
     redirect("/");
   }
 
-  const { data: courses } = await sanityFetch({
-    query: DASHBOARD_COURSES_QUERY,
-    params: { userId: user.id },
-  });
+  const [{ data: courses }, userTier] = await Promise.all([
+    sanityFetch({
+      query: DASHBOARD_COURSES_QUERY,
+      params: { userId: user.id },
+    }),
+    getUserTier()
+  ]);
 
   // Calculate completion for each course and filter to started ones
   type Course = (typeof courses)[number];
@@ -75,13 +80,13 @@ export default async function MyCoursesPage() {
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
       {/* Animated gradient mesh background */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-violet-600/15 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-emerald-600/10 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-fuchsia-600/10 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-125 h-125 bg-teal-600/10 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-lime-500/10 rounded-full blur-[80px] animate-pulse"
+          className="absolute top-[40%] right-[20%] w-100 h-100 bg-lime-500/10 rounded-full blur-[80px] animate-pulse"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -105,6 +110,28 @@ export default async function MyCoursesPage() {
             Courses you&apos;ve started learning. Pick up where you left off.
           </p>
         </div>
+
+        {userTier !== "ultra" && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+            <Link
+              href="/pricing"
+              className="p-6 rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-500/50 transition-colors group">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-lg font-semibold text-white group-hover:text-green-300 transition-colors">
+                    Upgrade to {userTier === "free" ? "Pro" : "Ultra"}
+                  </p>
+                  <p className="text-sm text-zinc-400">
+                    {userTier === "pro"
+                      ? "Get AI Learning Assistant & exclusive content"
+                      : "Unlock more courses & features"}
+                  </p>
+                </div>
+                <ArrowRightCircle className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </div>
+        )}
 
         {startedCourses.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
