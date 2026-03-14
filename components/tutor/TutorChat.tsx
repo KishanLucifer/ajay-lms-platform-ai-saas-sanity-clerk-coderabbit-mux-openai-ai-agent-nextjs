@@ -2,7 +2,7 @@
 
 import { useChat } from "@ai-sdk/react";
 import { useRef, useEffect, useState, type FormEvent } from "react";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { TutorMessages } from "./TutorMessages";
 
 export function TutorChat() {
@@ -55,7 +55,7 @@ export function TutorChat() {
       </div>
 
       {/* Input Area - Fixed at bottom */}
-      <div className="shrink-0 p-6 border-t border-cyan-500/20 bg-slate-900/80 backdrop-blur-sm">
+      <div className="shrink-0 p-6 border-t border-green-400/20 bg-slate-900/80 backdrop-blur-sm">
         <form onSubmit={handleSubmit} className="relative">
           <input
             ref={inputRef}
@@ -67,7 +67,7 @@ export function TutorChat() {
             className="
               w-full
               px-5 py-4 pr-14
-              bg-white/5
+              bg-slate-800/5
               border border-cyan-500/20
               rounded-xl
               text-white text-base
@@ -83,7 +83,7 @@ export function TutorChat() {
             className="
               absolute right-3 top-1/2 -translate-y-1/2
               p-2.5
-              bg-gradient-to-r from-cyan-500 to-blue-600
+              bg-gradient-to-r from-lime-500 to-green-600
               hover:from-cyan-400 hover:to-blue-500
               disabled:from-slate-600 disabled:to-slate-700
               disabled:cursor-not-allowed
@@ -91,8 +91,7 @@ export function TutorChat() {
               transition-all duration-200
               group
             "
-            aria-label="Send message"
-          >
+            aria-label="Send message">
             {isLoading ? (
               <Loader2 className="w-5 h-5 text-white animate-spin" />
             ) : (

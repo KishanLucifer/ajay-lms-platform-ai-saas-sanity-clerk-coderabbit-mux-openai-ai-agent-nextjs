@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { CheckCircle2, Circle, Loader2, Trophy } from "lucide-react";
+import { CheckCircle2, Circle, Loader2, Trophy , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toggleCourseCompletion } from "@/lib/actions";
 
@@ -46,7 +46,7 @@ export function CourseCompleteButton({
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-xl">
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20">
-            <Trophy className="w-6 h-6 text-emerald-400" />
+            <Activity className="w-6 h-6 text-emerald-400" />
           </div>
           <div>
             <p className="font-semibold text-emerald-400">Course Completed!</p>

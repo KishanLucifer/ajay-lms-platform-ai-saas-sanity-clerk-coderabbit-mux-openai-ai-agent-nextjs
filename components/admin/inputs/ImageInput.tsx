@@ -9,7 +9,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ImageIcon, Upload, X, Loader2 } from "lucide-react";
+import { ImageIcon, Upload, X, Loader2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { uploadImage } from "@/lib/actions/images";
 import { urlFor } from "@/sanity-server/lib/image";
 import type { Course } from "@/sanity.types";

@@ -7,6 +7,7 @@ import {
   Sparkles,
   Loader2,
   Code2,
+  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
 } from "lucide-react";
 import { TIER_FEATURES, getTierColorClasses } from "@/lib/constants";
 import { Header } from "@/components/Header";
@@ -22,7 +23,7 @@ export default function PricingPage() {
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-[40%] right-[20%] w-100 h-100 bg-cyan-500/10 rounded-full blur-[80px] animate-pulse"
+          className="absolute top-[40%] right-[20%] w-100 h-100 bg-lime-500/10 rounded-full blur-[80px] animate-pulse"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -42,15 +43,15 @@ export default function PricingPage() {
       <main className="relative z-10 px-6 lg:px-12 py-12 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-violet-500/20 mb-6">
             <Sparkles className="w-4 h-4 text-violet-400" />
-            <span className="text-sm text-violet-300">
+            <span className="text-sm text-green-300">
               Simple, transparent pricing
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
             Choose your{" "}
-            <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-lime-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
               learning path
             </span>
           </h1>
@@ -110,7 +111,7 @@ export default function PricingPage() {
                 },
                 pricingTableCardHeader: {
                   background:
-                    "linear-gradient(135deg, rgb(139 92 246), rgb(192 132 252))",
+                    "linear-gradient(135deg, rgb(34 197 94), rgb(16 185 129))",
                   color: "white",
                   borderRadius: "1rem 1rem 0 0",
                   padding: "2rem",
@@ -157,7 +158,7 @@ export default function PricingPage() {
                   transition: "all 0.2s ease",
                   fontSize: "1rem",
                   background:
-                    "linear-gradient(135deg, rgb(139 92 246), rgb(192 132 252))",
+                    "linear-gradient(135deg, rgb(34 197 94), rgb(16 185 129))",
                   border: "none",
                   boxShadow: "0 4px 15px rgba(139, 92, 246, 0.3)",
                 },
@@ -185,13 +186,13 @@ export default function PricingPage() {
             Questions?{" "}
             <Link
               href="#"
-              className="text-violet-400 hover:text-violet-300 underline underline-offset-4">
+              className="text-violet-400 hover:text-green-300 underline underline-offset-4">
               Contact us
             </Link>{" "}
             or check out our{" "}
             <Link
               href="#"
-              className="text-violet-400 hover:text-violet-300 underline underline-offset-4">
+              className="text-violet-400 hover:text-green-300 underline underline-offset-4">
               FAQ
             </Link>
           </p>
@@ -202,8 +203,8 @@ export default function PricingPage() {
       <footer className="relative z-10 px-6 lg:px-12 py-12 border-t border-zinc-800/50 max-w-7xl mx-auto mt-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-linea-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
-              <Code2 className="w-4 h-4 text-white" />
+            <div className="w-8 h-8 rounded-lg bg-linea-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+              <Cpu className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold">Sonny&apos;s Academy</span>
           </div>

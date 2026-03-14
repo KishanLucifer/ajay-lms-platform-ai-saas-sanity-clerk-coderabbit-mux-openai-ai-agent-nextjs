@@ -31,7 +31,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { X, Plus, GripVertical } from "lucide-react";
+import { X, Plus, GripVertical , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { SortableReferenceItem } from "./SortableReferenceItem";
 import { AvailableDocumentOption } from "./AvailableDocumentOption";
 import type { ReferenceArrayInputProps, SanityReference } from "./types";

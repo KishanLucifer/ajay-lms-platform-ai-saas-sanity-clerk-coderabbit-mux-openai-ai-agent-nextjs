@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MuxPlayer from "@mux/mux-player-react";
-import { VideoOff } from "lucide-react";
+import { VideoOff , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { getMuxSignedTokens } from "@/lib/actions/mux";
 
 interface MuxVideoPlayerProps {

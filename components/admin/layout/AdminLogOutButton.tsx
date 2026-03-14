@@ -1,7 +1,7 @@
 "use client";
 
 import { useLogOut } from "@sanity/sdk-react";
-import { LogOut } from "lucide-react";
+import { LogOut , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 
 function AdminLogOutButton() {
   const logout = useLogOut();

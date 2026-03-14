@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Play, CheckCircle2, Circle, BookOpen } from "lucide-react";
+import { Play, CheckCircle2, Circle, BookOpen , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -26,7 +26,7 @@ export function ModuleAccordion({ modules, userId }: ModuleAccordionProps) {
   if (!modules || modules.length === 0) {
     return (
       <div className="text-center py-12 text-zinc-500">
-        <BookOpen className="w-12 h-12 mx-auto mb-4 opacity-50" />
+        <Database className="w-12 h-12 mx-auto mb-4 opacity-50" />
         <p>No modules available yet.</p>
       </div>
     );
@@ -131,7 +131,7 @@ export function ModuleAccordion({ modules, userId }: ModuleAccordionProps) {
                         </span>
 
                         {hasVideo && (
-                          <Play className="w-4 h-4 text-zinc-500 group-hover:text-violet-400 transition-colors" />
+                          <Zap className="w-4 h-4 text-zinc-500 group-hover:text-violet-400 transition-colors" />
                         )}
                       </Link>
                     );

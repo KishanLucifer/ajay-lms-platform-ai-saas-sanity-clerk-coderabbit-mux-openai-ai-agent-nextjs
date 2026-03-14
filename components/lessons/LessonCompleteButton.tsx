@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
-import { CheckCircle2, Circle, Loader2 } from "lucide-react";
+import { CheckCircle2, Circle, Loader2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toggleLessonCompletion } from "@/lib/actions";
 
@@ -21,7 +21,11 @@ export function LessonCompleteButton({
 
   const handleToggle = () => {
     startTransition(async () => {
-      const result = await toggleLessonCompletion(lessonId, lessonSlug, !isCompleted);
+      const result = await toggleLessonCompletion(
+        lessonId,
+        lessonSlug,
+        !isCompleted,
+      );
       if (result.success) {
         setIsCompleted(result.isCompleted);
       }
@@ -36,9 +40,8 @@ export function LessonCompleteButton({
       className={
         isCompleted
           ? "bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 hover:text-emerald-300"
-          : "bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0"
-      }
-    >
+          : "bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-300 hover:to-emerald-400 text-white border-0"
+      }>
       {isPending ? (
         <Loader2 className="w-4 h-4 mr-2 animate-spin" />
       ) : isCompleted ? (

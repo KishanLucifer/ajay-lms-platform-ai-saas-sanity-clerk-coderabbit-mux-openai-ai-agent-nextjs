@@ -18,6 +18,7 @@ import {
   Sparkles,
   AlertCircle,
   CheckCircle2,
+  Cpu, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
 } from "lucide-react";
 import { projectId, dataset } from "@/sanity-server/env";
 
@@ -60,7 +61,7 @@ function StatCard({
             className={`flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br ${gradient} shadow-lg`}>
             <Icon className={`h-5 w-5 ${iconColor}`} />
           </div>
-          <ArrowRight className="h-4 w-4 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1 transition-all" />
+          <ArrowRightCircle className="h-4 w-4 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1 transition-all" />
         </div>
         <Suspense fallback={<Skeleton className="h-8 w-16 bg-zinc-800" />}>
           <StatCardContent documentType={documentType} />
@@ -74,10 +75,10 @@ function StatCard({
 const STAT_CARDS = [
   {
     title: "Courses",
-    icon: BookOpen,
+    icon: Database,
     documentType: "course",
     href: "/admin/courses",
-    gradient: "from-violet-500 to-fuchsia-600",
+    gradient: "from-green-400 to-emerald-500",
     iconColor: "text-white",
   },
   {
@@ -85,12 +86,12 @@ const STAT_CARDS = [
     icon: Layers,
     documentType: "module",
     href: "/admin/modules",
-    gradient: "from-cyan-500 to-blue-600",
+    gradient: "from-lime-500 to-green-600",
     iconColor: "text-white",
   },
   {
     title: "Lessons",
-    icon: PlayCircle,
+    icon: Zap,
     documentType: "lesson",
     href: "/admin/lessons",
     gradient: "from-emerald-500 to-teal-600",
@@ -131,7 +132,7 @@ function QuickActionLink({
           <Icon className="h-4 w-4 text-white" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-white group-hover:text-violet-300 transition-colors">
+          <p className="text-sm font-medium text-white group-hover:text-green-300 transition-colors">
             {title}
           </p>
           <p className="text-xs text-zinc-500 truncate">{description}</p>
@@ -266,14 +267,14 @@ export default function AdminDashboard() {
               description="View and edit courses"
               icon={BookOpen}
               href="/admin/courses"
-              gradient="from-violet-500 to-fuchsia-600"
+              gradient="from-green-400 to-emerald-500"
             />
             <QuickActionLink
               title="Manage Modules"
               description="Organize course modules"
               icon={Layers}
               href="/admin/modules"
-              gradient="from-cyan-500 to-blue-600"
+              gradient="from-lime-500 to-green-600"
             />
             <QuickActionLink
               title="Manage Lessons"
@@ -320,7 +321,7 @@ export default function AdminDashboard() {
       {/* Tips Section */}
       <div className="rounded-xl bg-linear-to-br from-violet-600/10 via-fuchsia-600/5 to-cyan-600/10 border border-violet-500/20 p-6">
         <div className="flex items-start gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-violet-500 to-fuchsia-600 shadow-lg shrink-0">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-green-400 to-emerald-500 shadow-lg shrink-0">
             <Sparkles className="h-5 w-5 text-white" />
           </div>
           <div>

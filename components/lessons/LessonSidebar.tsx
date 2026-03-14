@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle2, Circle, Play } from "lucide-react";
+import { CheckCircle2, Circle, Play , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -113,14 +113,14 @@ export function LessonSidebar({
                             className={cn(
                               "flex items-center gap-2.5 pl-2 pr-3 py-2 rounded-lg text-sm transition-colors",
                               isActive
-                                ? "bg-violet-500/20 text-violet-300"
+                                ? "bg-violet-500/20 text-green-300"
                                 : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
                             )}
                           >
                             {isCompleted ? (
                               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                             ) : isActive ? (
-                              <Play className="w-4 h-4 text-violet-400 shrink-0 fill-violet-400" />
+                              <Zap className="w-4 h-4 text-violet-400 shrink-0 fill-violet-400" />
                             ) : (
                               <Circle className="w-4 h-4 text-zinc-600 shrink-0" />
                             )}

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useDocumentProjection } from "@sanity/sdk-react";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight, BookOpen, Layers } from "lucide-react";
+import { ChevronRight, BookOpen, Layers , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, Database, Network} from "lucide-react";
 import type { ModuleItemProps, ModuleData } from "./types";
 
 export function ModuleItem({
@@ -57,7 +57,7 @@ export function ModuleItem({
               variant="secondary"
               className="bg-zinc-800 text-zinc-400 border-zinc-700"
             >
-              <BookOpen className="h-3 w-3 mr-1" />
+              <Database className="h-3 w-3 mr-1" />
               {lessonCount} lesson{lessonCount === 1 ? "" : "s"}
             </Badge>
             <ChevronRight className="h-5 w-5 text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-1 transition-all" />

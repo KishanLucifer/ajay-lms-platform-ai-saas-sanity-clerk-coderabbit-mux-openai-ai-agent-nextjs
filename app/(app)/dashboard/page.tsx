@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { BookOpen, Sparkles, ArrowRight } from "lucide-react";
+import { BookOpen, Sparkles, ArrowRight , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Header } from "@/components/Header";
 import { CourseList } from "@/components/courses";
 import { sanityFetch } from "@/sanity-server/lib/live";
@@ -35,7 +35,7 @@ export default async function DashboardPage() {
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[80px] animate-pulse"
+          className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-lime-500/10 rounded-full blur-[80px] animate-pulse"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -58,13 +58,13 @@ export default async function DashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
             <h1 className="text-4xl md:text-5xl font-black tracking-tight">
               Welcome back,{" "}
-              <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-lime-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
                 {firstName}
               </span>
             </h1>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 shrink-0">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-violet-500/20 shrink-0">
               <Sparkles className="w-4 h-4 text-violet-400" />
-              <span className="text-sm text-violet-300">
+              <span className="text-sm text-green-300">
                 {userTier === "ultra"
                   ? "Ultra Member"
                   : userTier === "pro"
@@ -84,7 +84,7 @@ export default async function DashboardPage() {
           <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
-                <BookOpen className="w-5 h-5 text-violet-400" />
+                <Database className="w-5 h-5 text-violet-400" />
               </div>
               <div>
                 <p className="text-2xl font-bold">{courses.length}</p>
@@ -108,10 +108,10 @@ export default async function DashboardPage() {
           {userTier !== "ultra" && (
             <Link
               href="/pricing"
-              className="p-6 rounded-xl bg-gradient-to-br from-violet-600/20 to-fuchsia-600/20 border border-violet-500/30 hover:border-violet-500/50 transition-colors group">
+              className="p-6 rounded-xl bg-gradient-to-br from-green-600/20 to-emerald-600/20 border border-green-500/30 hover:border-green-500/50 transition-colors group">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-lg font-semibold text-white group-hover:text-violet-300 transition-colors">
+                  <p className="text-lg font-semibold text-white group-hover:text-green-300 transition-colors">
                     Upgrade to {userTier === "free" ? "Pro" : "Ultra"}
                   </p>
                   <p className="text-sm text-zinc-400">
@@ -120,7 +120,7 @@ export default async function DashboardPage() {
                       : "Unlock more courses & features"}
                   </p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-violet-400 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightCircle className="w-5 h-5 text-violet-400 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           )}

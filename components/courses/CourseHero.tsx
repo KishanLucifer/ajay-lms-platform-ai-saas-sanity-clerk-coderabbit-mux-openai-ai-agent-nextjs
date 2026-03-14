@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Play, Tag } from "lucide-react";
+import { ArrowLeft, BookOpen, Play, Tag , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { TIER_STYLES } from "@/lib/constants";
 import type { COURSE_WITH_MODULES_QUERYResult } from "@/sanity.types";
@@ -83,11 +83,11 @@ export function CourseHero({
 
           <div className="flex items-center gap-6 text-sm text-zinc-500">
             <span className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4" />
+              <Database className="w-4 h-4" />
               {moduleCount ?? 0} modules
             </span>
             <span className="flex items-center gap-2">
-              <Play className="w-4 h-4" />
+              <Zap className="w-4 h-4" />
               {lessonCount ?? 0} lessons
             </span>
           </div>

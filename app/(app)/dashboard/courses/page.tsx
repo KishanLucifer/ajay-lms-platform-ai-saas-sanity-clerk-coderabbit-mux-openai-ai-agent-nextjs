@@ -1,6 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { BookOpen } from "lucide-react";
+import { BookOpen , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/courses";
 import { sanityFetch } from "@/sanity-server/lib/live";
@@ -81,7 +81,7 @@ export default async function MyCoursesPage() {
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[80px] animate-pulse"
+          className="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-lime-500/10 rounded-full blur-[80px] animate-pulse"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -127,7 +127,7 @@ export default async function MyCoursesPage() {
         ) : (
           <div className="text-center py-16">
             <div className="w-16 h-16 rounded-2xl bg-zinc-800/50 flex items-center justify-center mx-auto mb-4">
-              <BookOpen className="w-8 h-8 text-zinc-500" />
+              <Database className="w-8 h-8 text-zinc-500" />
             </div>
             <h3 className="text-xl font-semibold mb-2">
               No courses started yet

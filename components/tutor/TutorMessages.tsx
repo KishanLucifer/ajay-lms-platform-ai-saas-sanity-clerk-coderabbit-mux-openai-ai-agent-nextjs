@@ -1,7 +1,7 @@
 "use client";
 
 import type { UIMessage } from "ai";
-import { Sparkles, User, Search, Loader2, CheckCircle2 } from "lucide-react";
+import { Sparkles, User, Search, Loader2, CheckCircle2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import { useTutor } from "./TutorContext";
@@ -80,19 +80,17 @@ export function TutorMessages({ messages, isLoading }: TutorMessagesProps) {
             {/* Message content */}
             {hasContent && (
               <div
-                className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}
-              >
+                className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}>
                 {/* Avatar */}
                 <div
                   className={`
                     shrink-0 w-10 h-10 rounded-xl flex items-center justify-center
                     ${
                       message.role === "assistant"
-                        ? "bg-gradient-to-br from-cyan-400 to-blue-600"
-                        : "bg-gradient-to-br from-violet-500 to-fuchsia-600"
+                        ? "bg-gradient-to-br from-lime-400 to-green-600"
+                        : "bg-gradient-to-br from-green-400 to-emerald-500"
                     }
-                  `}
-                >
+                  `}>
                   {message.role === "assistant" ? (
                     <Sparkles className="w-5 h-5 text-white" />
                   ) : (
@@ -106,11 +104,10 @@ export function TutorMessages({ messages, isLoading }: TutorMessagesProps) {
                     max-w-[85%] px-5 py-4 rounded-2xl text-base leading-relaxed
                     ${
                       message.role === "assistant"
-                        ? "bg-white/5 text-slate-200 rounded-tl-sm"
-                        : "bg-gradient-to-r from-cyan-500/20 to-blue-500/20 text-white rounded-tr-sm"
+                        ? "bg-slate-800/5 text-slate-200 rounded-tl-sm"
+                        : "bg-gradient-to-r from-lime-500/20 to-green-500/20 text-white rounded-tr-sm"
                     }
-                  `}
-                >
+                  `}>
                   <MessageContent content={content} />
                 </div>
               </div>
@@ -122,10 +119,10 @@ export function TutorMessages({ messages, isLoading }: TutorMessagesProps) {
       {/* Loading indicator */}
       {isLoading && messages[messages.length - 1]?.role === "user" && (
         <div className="flex gap-4">
-          <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
+          <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-lime-400 to-green-600 flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
-          <div className="bg-white/5 px-5 py-4 rounded-2xl rounded-tl-sm">
+          <div className="bg-slate-800/5 px-5 py-4 rounded-2xl rounded-tl-sm">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
               <span className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
@@ -169,15 +166,14 @@ function ToolCallUI({ toolPart }: { toolPart: ToolCallPart }) {
 
   return (
     <div className="flex gap-4">
-      <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+      <div className="shrink-0 w-10 h-10 rounded-xl bg-gradient-to-br from-lime-500 to-emerald-600 flex items-center justify-center">
         <Search className="w-5 h-5 text-white" />
       </div>
       <div
         className={`
         flex items-center gap-4 px-5 py-3.5 rounded-xl text-base
         ${isComplete ? "bg-emerald-500/10 border border-emerald-500/20" : "bg-amber-500/10 border border-amber-500/20"}
-      `}
-      >
+      `}>
         {isComplete ? (
           <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
         ) : (
@@ -185,8 +181,7 @@ function ToolCallUI({ toolPart }: { toolPart: ToolCallPart }) {
         )}
         <div className="flex flex-col">
           <span
-            className={`font-medium ${isComplete ? "text-emerald-300" : "text-amber-300"}`}
-          >
+            className={`font-medium ${isComplete ? "text-emerald-300" : "text-amber-300"}`}>
             {isComplete ? `${displayName} complete` : `${displayName}...`}
           </span>
           {searchQuery && (
@@ -217,8 +212,7 @@ function MessageContent({ content }: { content: string }) {
               <Link
                 href={href}
                 onClick={closeChat}
-                className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
-              >
+                className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">
                 {children}
               </Link>
             );
@@ -229,8 +223,7 @@ function MessageContent({ content }: { content: string }) {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors"
-            >
+              className="text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">
               {children}
             </a>
           );
@@ -299,8 +292,7 @@ function MessageContent({ content }: { content: string }) {
         em: ({ children }) => (
           <em className="italic text-slate-300">{children}</em>
         ),
-      }}
-    >
+      }}>
       {content}
     </Markdown>
   );

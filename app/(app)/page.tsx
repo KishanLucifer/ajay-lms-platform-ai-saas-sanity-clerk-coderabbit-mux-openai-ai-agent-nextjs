@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/courses";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import {
   ArrowRight,
   Play,
@@ -15,6 +16,7 @@ import {
   Trophy,
   Sparkles,
   LayoutDashboard,
+  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
 } from "lucide-react";
 import { sanityFetch } from "@/sanity-server/lib/live";
 import {
@@ -37,13 +39,13 @@ export default async function Home() {
     <div className="min-h-screen bg-[#09090b] text-white overflow-hidden">
       {/* Animated gradient mesh background */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-violet-600/20 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-[-20%] left-[-10%] w-150 h-150 bg-emerald-600/10 rounded-full blur-[120px] animate-pulse" />
         <div
-          className="absolute bottom-[-10%] right-[-10%] w-125 h-125 bg-fuchsia-600/15 rounded-full blur-[100px] animate-pulse"
+          className="absolute bottom-[-10%] right-[-10%] w-125 h-125 bg-teal-600/10 rounded-full blur-[100px] animate-pulse"
           style={{ animationDelay: "1s" }}
         />
         <div
-          className="absolute top-[40%] right-[20%] w-100 h-100 bg-cyan-500/10 rounded-full blur-[80px] animate-pulse"
+          className="absolute top-[40%] right-[20%] w-100 h-100 bg-lime-500/10 rounded-full blur-[80px] animate-pulse"
           style={{ animationDelay: "2s" }}
         />
       </div>
@@ -65,10 +67,10 @@ export default async function Home() {
           <div className="flex flex-col items-center text-center">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 mb-8 animate-fade-in"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-violet-500/20 mb-8 animate-fade-in"
               style={{ animationDelay: "0.1s" }}>
               <Sparkles className="w-4 h-4 text-violet-400" />
-              <span className="text-sm text-violet-300">
+              <span className="text-sm text-green-300">
                 Code Like a Professional
               </span>
             </div>
@@ -78,7 +80,7 @@ export default async function Home() {
               className="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tight leading-[0.95] mb-8 animate-fade-in"
               style={{ animationDelay: "0.2s" }}>
               <span className="block text-white">Future-Ready Coding</span>
-              <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-lime-400 via-green-400 to-emerald-400 bg-clip-text text-transparent">
                 the Professonal way
               </span>
             </h1>
@@ -102,7 +104,7 @@ export default async function Home() {
                   <Link href="/dashboard">
                     <Button
                       size="lg"
-                      className="bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold">
+                      className="bg-linear-to-r from-lime-400 to-green-500 hover:from-lime-300 hover:to-green-400 text-white border-0 shadow-xl shadow-cyan-400/30 px-8 h-12 text-base font-semibold">
                       <LayoutDashboard className="w-4 h-4 mr-2" />
                       Go to Dashboard
                     </Button>
@@ -111,8 +113,8 @@ export default async function Home() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="border-zinc-700 bg-white/5 text-white px-8 h-12 text-base hover:bg-white/10 hover:text-white">
-                      <BookOpen className="w-4 h-4 mr-2" />
+                      className="border-slate-600 bg-blue-900/5 text-white px-8 h-12 text-base hover:bg-blue-800/10 hover:text-white">
+                      <Database className="w-4 h-4 mr-2" />
                       My Courses
                     </Button>
                   </Link>
@@ -122,8 +124,8 @@ export default async function Home() {
                   <Link href="/pricing">
                     <Button
                       size="lg"
-                      className="bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8 h-12 text-base font-semibold">
-                      <Play className="w-4 h-4 mr-2 fill-white" />
+                      className="bg-linear-to-r from-lime-400 to-green-500 hover:from-lime-300 hover:to-green-400 text-white border-0 shadow-xl shadow-cyan-400/30 px-8 h-12 text-base font-semibold">
+                      <Zap className="w-4 h-4 mr-2 fill-white" />
                       Start Free Trial
                     </Button>
                   </Link>
@@ -131,8 +133,8 @@ export default async function Home() {
                     <Button
                       variant="outline"
                       size="lg"
-                      className="border-zinc-700 bg-white/5 text-white px-8 h-12 text-base hover:bg-white/10 hover:text-white">
-                      <BookOpen className="w-4 h-4 mr-2" />
+                      className="border-slate-600 bg-blue-900/5 text-white px-8 h-12 text-base hover:bg-blue-800/10 hover:text-white">
+                      <Database className="w-4 h-4 mr-2" />
                       See All Courses
                     </Button>
                   </Link>
@@ -148,12 +150,12 @@ export default async function Home() {
                 {
                   value: stats?.courseCount ?? 0,
                   label: "Courses",
-                  icon: BookOpen,
+                  icon: Database,
                 },
                 {
                   value: stats?.lessonCount ?? 0,
                   label: "Lessons",
-                  icon: Play,
+                  icon: Zap,
                 },
                 { value: "10K+", label: "Students", icon: Users },
               ].map((stat) => (
@@ -177,7 +179,7 @@ export default async function Home() {
             {[
               {
                 tier: "Foundation Plan",
-                icon: Rocket,
+                icon: Radar,
                 color: "emerald",
                 gradient: "from-emerald-500 to-teal-600",
                 bgGlow: "bg-emerald-500/10",
@@ -191,11 +193,11 @@ export default async function Home() {
               },
               {
                 tier: "Professional",
-                icon: Crown,
+                icon: Hexagon,
                 color: "violet",
-                gradient: "from-violet-500 to-fuchsia-600",
-                bgGlow: "bg-violet-500/10",
-                borderColor: "border-violet-500/30",
+                gradient: "from-green-400 to-emerald-500",
+                bgGlow: "bg-green-500/10",
+                borderColor: "border-green-500/30",
                 description: "Level up with advanced, production-ready content",
                 features: [
                   "All Free content",
@@ -207,10 +209,10 @@ export default async function Home() {
               },
               {
                 tier: "Elite",
-                icon: Trophy,
+                icon: Activity,
                 color: "cyan",
-                gradient: "from-cyan-400 to-blue-600",
-                bgGlow: "bg-cyan-500/10",
+                gradient: "from-lime-400 to-green-600",
+                bgGlow: "bg-lime-500/10",
                 borderColor: "border-cyan-500/20",
                 description:
                   "Unlock the real gems - AI tutor & exclusive content",
@@ -255,9 +257,9 @@ export default async function Home() {
             <Link href="/pricing">
               <Button
                 variant="outline"
-                className="border-zinc-700 bg-white/5 text-white hover:bg-white/10 hover:text-white">
+                className="border-slate-600 bg-blue-900/5 text-white hover:bg-blue-800/10 hover:text-white">
                 Pricing In Detail
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRightCircle className="w-4 h-4 ml-2" />
               </Button>
             </Link>
           </div>
@@ -268,7 +270,7 @@ export default async function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Learn Skills That Deliver{" "}
-              <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Real Impact
               </span>
             </h2>
@@ -297,9 +299,9 @@ export default async function Home() {
             <Link href="/dashboard">
               <Button
                 variant="outline"
-                className="border-zinc-700 bg-white/5 text-white hover:bg-white/10 hover:text-white">
+                className="border-slate-600 bg-blue-900/5 text-white hover:bg-blue-800/10 hover:text-white">
                 See Full Catalog
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRightCircle className="w-4 h-4 ml-2" />
               </Button>
             </Link>
           </div>
@@ -308,18 +310,18 @@ export default async function Home() {
         {/* Testimonials */}
         <section
           id="testimonials"
-          className="px-6 lg:px-12 py-20 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          className="px-6 lg:px-12 py-20 max-w-7xl mx-auto flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="text-center mb-16 relative z-10 w-full">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               Developers{" "}
-              <span className="bg-linear-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-teal-400 to-lime-400 bg-clip-text text-transparent">
                 love it
               </span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
+          <InfiniteMovingCards
+            items={[
               {
                 name: "Alex Chen",
                 role: "Junior Developer",
@@ -341,44 +343,28 @@ export default async function Home() {
                   "Best investment I've made. The Pro courses filled gaps my university courses never covered.",
                 avatar: "🎓",
               },
-            ].map((testimonial) => (
-              <div
-                key={testimonial.name}
-                className="p-6 rounded-2xl bg-zinc-900/30 border border-zinc-800">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={`star-${testimonial.name}-${i}`}
-                      className="w-4 h-4 text-amber-400 fill-amber-400"
-                    />
-                  ))}
-                </div>
-                <p className="text-zinc-300 mb-6 leading-relaxed">
-                  &ldquo;{testimonial.content}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xl">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-zinc-500">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+              {
+                name: "Emily Davies",
+                role: "Senior Engineer",
+                content:
+                  "Superb quality. I bought the Pro course to brush up on my modern framework knowledge. Totally worth the price.",
+                avatar: "💻",
+              },
+            ]}
+            direction="left"
+            speed="slow"
+          />
         </section>
 
         {/* CTA Section */}
         <section className="px-6 lg:px-12 py-20 max-w-7xl mx-auto">
-          <div className="relative rounded-3xl bg-linear-to-br from-violet-600/20 via-fuchsia-600/10 to-cyan-600/20 border border-white/10 p-12 md:p-20 text-center overflow-hidden">
+          <div className="relative rounded-3xl bg-linear-to-br from-emerald-900/40 via-teal-900/20 to-lime-900/40 border border-white/10 p-12 md:p-20 text-center overflow-hidden">
             {/* Animated gradient border */}
-            <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-violet-500/20 via-fuchsia-500/20 to-cyan-500/20 blur-xl" />
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-r from-emerald-500/20 via-teal-500/20 to-lime-500/20 blur-xl" />
 
             <div className="relative z-10">
-              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-violet-500/30">
-                <Rocket className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-green-400 to-emerald-500 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-green-500/30">
+                <Radar className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 Start Your Developer Journey Today
@@ -390,9 +376,9 @@ export default async function Home() {
               <Link href="/pricing">
                 <Button
                   size="lg"
-                  className="bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-10 h-14 text-lg font-semibold">
+                  className="bg-linear-to-r from-lime-400 to-green-500 hover:from-lime-300 hover:to-green-400 text-white border-0 shadow-xl shadow-cyan-400/30 px-10 h-14 text-lg font-semibold">
                   View Pricing
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRightCircle className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
             </div>
@@ -403,8 +389,8 @@ export default async function Home() {
         <footer className="px-6 lg:px-12 py-12 border-t border-zinc-800/50 max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center">
-                <Code2 className="w-4 h-4 text-white" />
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                <Cpu className="w-4 h-4 text-white" />
               </div>
               <span className="font-bold">EduX&apos;s Academy</span>
             </div>

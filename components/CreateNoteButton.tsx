@@ -2,7 +2,7 @@
 
 import { useTransition } from "react";
 import { useApplyDocumentActions, createDocument } from "@sanity/sdk-react";
-import { Loader2 } from "lucide-react";
+import { Loader2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 
 export function CreateNoteButton() {
   const [isPending, startTransition] = useTransition();

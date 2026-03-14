@@ -29,6 +29,7 @@ import {
   Heading4,
   Type,
   ImagePlus,
+  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {

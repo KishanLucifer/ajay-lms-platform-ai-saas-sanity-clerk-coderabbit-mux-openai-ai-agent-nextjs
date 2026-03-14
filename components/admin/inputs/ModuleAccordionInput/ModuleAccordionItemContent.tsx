@@ -39,7 +39,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { X, Plus, GripVertical, ExternalLink, Layers } from "lucide-react";
+import { X, Plus, GripVertical, ExternalLink, Layers , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { SortableLessonItem } from "./SortableLessonItem";
 import { LessonOptionLabel } from "./OptionLabels";
 import type { SanityReference } from "./types";

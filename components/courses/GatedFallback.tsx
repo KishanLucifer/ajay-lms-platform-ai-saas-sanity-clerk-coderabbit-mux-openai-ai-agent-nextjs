@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Lock, Sparkles, CheckCircle2 } from "lucide-react";
+import { Lock, Sparkles, CheckCircle2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TIER_FEATURES, TIER_STYLES, type Tier } from "@/lib/constants";
 
@@ -26,8 +26,7 @@ export function GatedFallback({ requiredTier }: GatedFallbackProps) {
 
   return (
     <div
-      className={`relative rounded-2xl bg-gradient-to-br ${gradientMuted} border ${styles.border} p-8 md:p-12 overflow-hidden`}
-    >
+      className={`relative rounded-2xl bg-gradient-to-br ${gradientMuted} border ${styles.border} p-8 md:p-12 overflow-hidden`}>
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[#09090b]/80" />
       <div
@@ -37,8 +36,7 @@ export function GatedFallback({ requiredTier }: GatedFallbackProps) {
       <div className="relative z-10 max-w-xl mx-auto text-center">
         {/* Lock icon */}
         <div
-          className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-800/50 border ${styles.border} mb-6`}
-        >
+          className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-800/50 border ${styles.border} mb-6`}>
           <Lock className={`w-7 h-7 ${styles.text}`} />
         </div>
 
@@ -70,8 +68,7 @@ export function GatedFallback({ requiredTier }: GatedFallbackProps) {
               {tierFeatures.features.map((feature) => (
                 <li
                   key={feature}
-                  className="flex items-start gap-2 text-sm text-zinc-300"
-                >
+                  className="flex items-start gap-2 text-sm text-zinc-300">
                   <CheckCircle2
                     className={`w-4 h-4 mt-0.5 shrink-0 ${styles.text}`}
                   />
@@ -86,8 +83,7 @@ export function GatedFallback({ requiredTier }: GatedFallbackProps) {
         <Link href="/pricing">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-xl shadow-violet-600/30 px-8"
-          >
+            className="bg-gradient-to-r from-green-400 to-emerald-500 hover:from-green-300 hover:to-emerald-400 text-white border-0 shadow-xl shadow-green-400/30 px-8">
             <Sparkles className="w-4 h-4 mr-2" />
             View Pricing Plans
           </Button>

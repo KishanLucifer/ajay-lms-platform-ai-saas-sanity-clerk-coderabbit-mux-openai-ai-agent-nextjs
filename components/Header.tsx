@@ -23,6 +23,7 @@ import {
   BookOpen,
   Sparkles,
   Menu,
+  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useEffect } from "react";
@@ -52,7 +53,7 @@ export function Header() {
 
   const loggedInLinks = [
     { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-    { href: "/dashboard/courses", label: "My Courses", icon: BookOpen },
+    { href: "/dashboard/courses", label: "My Courses", icon: Database },
     // Show "Account" for Ultra users, "Upgrade" for others
     ...(isUltra
       ? [{ href: "/pricing", label: "Account", icon: Sparkles }]
@@ -107,7 +108,7 @@ export function Header() {
                   className={cn(
                     "flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all",
                     isActive
-                      ? "bg-violet-500/10 text-violet-300"
+                      ? "bg-green-500/10 text-green-300"
                       : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
                   )}>
                   <Icon className="w-4 h-4" />
@@ -151,12 +152,12 @@ export function Header() {
           <SignInButton mode="modal">
             <Button
               variant="ghost"
-              className="h-9 px-0 lg:px-6 text-sm cursor-pointer text-zinc-400 hover:text-white hover:bg-white/5">
+              className="h-9 px-0 lg:px-6 text-sm cursor-pointer text-slate-400 hover:text-white hover:bg-green-500/10">
               Sign in
             </Button>
           </SignInButton>
           <Link href="/pricing" className="hidden sm:block">
-            <Button className="bg-linear-to-r cursor-pointer from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white border-0 shadow-lg shadow-violet-600/25">
+            <Button className="bg-linear-to-r cursor-pointer from-lime-400 to-green-500 hover:from-lime-300 hover:to-green-400 text-white border-0 shadow-lg shadow-lime-400/25">
               Start Learning
             </Button>
           </Link>
@@ -189,7 +190,7 @@ export function Header() {
                       href={link.href}
                       className={cn(
                         "flex items-center gap-2 cursor-pointer",
-                        isActive ? "text-violet-300" : "text-zinc-300",
+                        isActive ? "text-green-300" : "text-zinc-300",
                       )}>
                       <Icon className="w-4 h-4" />
                       {link.label}
@@ -203,7 +204,7 @@ export function Header() {
           <UserButton
             appearance={{
               elements: {
-                avatarBox: "w-9 h-9 ring-2 ring-violet-500/20",
+                avatarBox: "w-9 h-9 ring-2 ring-green-500/20",
               },
             }}
           />
@@ -217,18 +218,18 @@ function Logo() {
   return (
     <>
       <div className="relative">
-        <div className="w-10 h-10 rounded-xl bg-linear-to-br from-violet-500 to-fuchsia-600 flex items-center justify-center shadow-lg shadow-violet-500/25 group-hover:shadow-violet-500/40 transition-shadow">
-          <Code2 className="w-5 h-5 text-white" />
+        <div className="w-10 h-10 rounded-xl bg-linear-to-br from-lime-400 to-green-600 flex items-center justify-center shadow-lg shadow-lime-500/30 group-hover:shadow-lime-500/50 group-hover:scale-105 transition-all duration-300">
+          <Cpu className="w-5 h-5 text-black" />
         </div>
-        <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-linear-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
-          <Play className="w-2 h-2 text-white fill-white" />
+        <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-zinc-900 border-2 border-black flex items-center justify-center">
+          <Sparkles className="w-2 h-2 text-lime-400" />
         </div>
       </div>
       <div className="flex flex-col">
-        <span className="font-bold text-lg tracking-tight leading-none">
+        <span className="font-bold text-lg tracking-tight leading-none bg-linear-to-r from-white to-zinc-400 dark:from-lime-300 dark:to-green-500 bg-clip-text text-transparent">
           EduX
         </span>
-        <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-lime-600/80 dark:text-lime-400/80 font-medium">
           Academy
         </span>
       </div>

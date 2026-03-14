@@ -10,6 +10,7 @@ import {
   FileText,
   Link2,
   GripVertical,
+  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, Database, Network
 } from "lucide-react";
 import type { LessonItemProps, LessonData } from "./types";
 
@@ -52,7 +53,7 @@ export function LessonItem({
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
-              <Play className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
+              <Zap className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
               <h4 className="font-medium text-white text-sm truncate">
                 {lesson?.title || "Untitled Lesson"}
               </h4>
@@ -83,7 +84,7 @@ export function LessonItem({
             {hasSlug && (
               <Badge
                 variant="secondary"
-                className="bg-violet-500/10 text-violet-400 border-violet-500/30 text-xs px-1.5 py-0"
+                className="bg-green-500/10 text-violet-400 border-green-500/30 text-xs px-1.5 py-0"
               >
                 <Link2 className="h-3 w-3" />
               </Badge>

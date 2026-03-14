@@ -11,7 +11,7 @@ import MuxPlayer from "@mux/mux-player-react";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { XCircle, Loader2, RefreshCw, Trash2, Upload } from "lucide-react";
+import { XCircle, Loader2, RefreshCw, Trash2, Upload , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import {
   createMuxUploadUrl,
   getMuxUploadStatus,

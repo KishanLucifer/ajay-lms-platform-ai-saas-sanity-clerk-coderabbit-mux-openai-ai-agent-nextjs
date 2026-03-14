@@ -13,7 +13,7 @@ import {
 } from "@sanity/sdk-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
-import { Plus, ChevronRight, Loader2, Search, X } from "lucide-react";
+import { Plus, ChevronRight, Loader2, Search, X , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, Database, Network} from "lucide-react";
 
 interface DocumentListProps {
   documentType: string;
@@ -100,8 +100,7 @@ function DocumentListContent({
           type="button"
           onClick={onCreateDocument}
           disabled={isCreating}
-          className="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-300 border border-zinc-700 rounded-lg hover:bg-zinc-800 hover:border-zinc-600 disabled:opacity-50 transition-colors"
-        >
+          className="mt-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-zinc-300 border border-zinc-700 rounded-lg hover:bg-zinc-800 hover:border-zinc-600 disabled:opacity-50 transition-colors">
           {isCreating ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
@@ -118,8 +117,7 @@ function DocumentListContent({
       {documents.map((doc) => (
         <Suspense
           key={doc.documentId}
-          fallback={<Skeleton className="h-16 w-full bg-zinc-800" />}
-        >
+          fallback={<Skeleton className="h-16 w-full bg-zinc-800" />}>
           <DocumentItem {...doc} basePath={basePath} />
         </Suspense>
       ))}
@@ -167,8 +165,7 @@ export function DocumentList({
             type="button"
             onClick={handleCreateDocument}
             disabled={isCreating}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-50 rounded-lg shadow-lg shadow-violet-500/20 transition-all"
-          >
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-linear-to-r from-lime-400 to-green-500 hover:from-lime-300 hover:to-green-400 disabled:opacity-50 rounded-lg shadow-lg shadow-lime-400/20 transition-all">
             {isCreating ? (
               <Loader2 className="h-4 w-4 animate-spin" />
             ) : (
@@ -187,14 +184,13 @@ export function DocumentList({
           placeholder={`Search ${documentType}s...`}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="pl-10 pr-10 bg-zinc-900/50 border-zinc-800 text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-violet-500/20"
+          className="pl-10 pr-10 bg-zinc-900/50 border-zinc-800 text-white placeholder:text-zinc-500 focus:border-violet-500 focus:ring-green-500/20"
         />
         {searchQuery && (
           <button
             type="button"
             onClick={() => setSearchQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 transition-colors"
-          >
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300 transition-colors">
             <X className="h-4 w-4" />
           </button>
         )}

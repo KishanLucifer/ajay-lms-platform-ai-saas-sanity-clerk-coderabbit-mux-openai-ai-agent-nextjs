@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import type { DocumentHandle } from "@sanity/sdk-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Play } from "lucide-react";
+import { Play , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { LessonItem } from "./LessonItem";
 
 interface OrphanLessonsProps {
@@ -16,7 +16,7 @@ export function OrphanLessons({ documents }: OrphanLessonsProps) {
       <div className="px-4 py-3 border-b border-amber-500/30 bg-amber-500/10">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-amber-500/20 border border-amber-500/30">
-            <Play className="h-4 w-4 text-amber-400" />
+            <Zap className="h-4 w-4 text-amber-400" />
           </div>
           <div>
             <h3 className="font-medium text-amber-200">All Lessons</h3>

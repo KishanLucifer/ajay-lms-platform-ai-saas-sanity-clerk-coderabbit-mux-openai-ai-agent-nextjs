@@ -11,6 +11,7 @@ import {
   Code2,
   Menu,
   ExternalLink,
+  Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import AdminLogOutButton from "./AdminLogOutButton";
@@ -25,9 +26,9 @@ import { Button } from "@/components/ui/button";
 
 const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
-  { href: "/admin/courses", label: "Courses", icon: BookOpen },
+  { href: "/admin/courses", label: "Courses", icon: Database },
   { href: "/admin/modules", label: "Modules", icon: Layers },
-  { href: "/admin/lessons", label: "Lessons", icon: PlayCircle },
+  { href: "/admin/lessons", label: "Lessons", icon: Zap },
   { href: "/admin/categories", label: "Categories", icon: Tag },
 ];
 
@@ -40,15 +41,14 @@ function AdminHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-900/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/80 backdrop-blur-xl">
       <div className="flex h-14 items-center px-4 lg:px-6">
         {/* Logo */}
         <Link
           href="/admin"
-          className="flex items-center gap-2.5 font-semibold lg:mr-8"
-        >
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-600 shadow-lg shadow-violet-500/20">
-            <Code2 className="h-4 w-4 text-white" />
+          className="flex items-center gap-2.5 font-semibold lg:mr-8">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg shadow-green-500/20">
+            <Cpu className="h-4 w-4 text-white" />
           </div>
           <span className="text-lg text-white hidden sm:inline">Admin</span>
         </Link>
@@ -65,10 +65,9 @@ function AdminHeader() {
                 className={cn(
                   "flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   active
-                    ? "bg-violet-500/20 text-violet-300"
+                    ? "bg-violet-500/20 text-green-300"
                     : "text-zinc-400 hover:text-white hover:bg-zinc-800/50",
-                )}
-              >
+                )}>
                 <Icon className="h-4 w-4" />
                 {item.label}
               </Link>
@@ -83,8 +82,7 @@ function AdminHeader() {
         <div className="hidden lg:flex items-center gap-4">
           <Link
             href="/studio"
-            className="text-sm text-zinc-400 hover:text-white transition-colors"
-          >
+            className="text-sm text-zinc-400 hover:text-white transition-colors">
             Open Studio
           </Link>
           <AdminLogOutButton />
@@ -96,16 +94,14 @@ function AdminHeader() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 text-zinc-400 hover:text-white hover:bg-zinc-800/50"
-            >
+              className="h-9 w-9 text-zinc-400 hover:text-white hover:bg-zinc-800/50">
               <Menu className="h-5 w-5" />
               <span className="sr-only">Open menu</span>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="end"
-            className="w-56 bg-zinc-900 border-zinc-800"
-          >
+            className="w-56 bg-zinc-900 border-zinc-800">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon;
               const active = isActive(item.href, item.exact);
@@ -116,10 +112,9 @@ function AdminHeader() {
                     className={cn(
                       "flex items-center gap-2 cursor-pointer",
                       active
-                        ? "text-violet-300 bg-violet-500/10"
+                        ? "text-green-300 bg-green-500/10"
                         : "text-zinc-300",
-                    )}
-                  >
+                    )}>
                     <Icon className="h-4 w-4" />
                     {item.label}
                   </Link>
@@ -130,8 +125,7 @@ function AdminHeader() {
             <DropdownMenuItem asChild>
               <Link
                 href="/studio"
-                className="flex items-center gap-2 cursor-pointer text-zinc-300"
-              >
+                className="flex items-center gap-2 cursor-pointer text-zinc-300">
                 <ExternalLink className="h-4 w-4" />
                 Open Studio
               </Link>

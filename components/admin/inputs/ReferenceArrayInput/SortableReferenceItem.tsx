@@ -5,7 +5,7 @@ import { useDocumentProjection } from "@sanity/sdk-react";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { Button } from "@/components/ui/button";
-import { X, GripVertical, ExternalLink } from "lucide-react";
+import { X, GripVertical, ExternalLink , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 
 interface SortableReferenceItemProps {
   id: string;

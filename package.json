@@ -45,6 +45,7 @@
     "badge": "^1.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^17.3.1",
     "groq": "3.88.1-typegen-experimental.0",
     "gsap": "^3.14.2",
     "input": "^1.0.1",

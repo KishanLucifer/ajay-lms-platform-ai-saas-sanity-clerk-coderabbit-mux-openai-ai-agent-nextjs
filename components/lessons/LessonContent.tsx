@@ -48,7 +48,7 @@ const components: PortableTextComponents = {
     ),
     em: ({ children }) => <em className="italic">{children}</em>,
     code: ({ children }) => (
-      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-violet-300 font-mono">
+      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-green-300 font-mono">
         {children}
       </code>
     ),
@@ -57,7 +57,7 @@ const components: PortableTextComponents = {
         href={value?.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors">
+        className="text-violet-400 hover:text-green-300 underline underline-offset-2 transition-colors">
         {children}
       </a>
     ),

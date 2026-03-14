@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import type { DocumentHandle } from "@sanity/sdk-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Layers } from "lucide-react";
+import { Layers , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { ModuleItem } from "./ModuleItem";
 
 interface OrphanModulesProps {

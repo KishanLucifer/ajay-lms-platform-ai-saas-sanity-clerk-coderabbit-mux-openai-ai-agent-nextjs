@@ -28,7 +28,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Accordion } from "@/components/ui/accordion";
-import { Plus, GripVertical } from "lucide-react";
+import { Plus, GripVertical , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { ModuleAccordionItemContent } from "./ModuleAccordionItemContent";
 import { ModuleOptionLabel } from "./OptionLabels";
 import type { ModuleAccordionInputProps, SanityReference } from "./types";

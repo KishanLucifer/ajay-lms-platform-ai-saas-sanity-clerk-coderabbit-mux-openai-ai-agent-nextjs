@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Lock, Play, Layers, CheckCircle2 } from "lucide-react";
+import { Lock, Play, Layers, CheckCircle2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { TIER_STYLES } from "@/lib/constants";
 import { Progress } from "@/components/ui/progress";
 import type { DASHBOARD_COURSES_QUERYResult } from "@/sanity.types";
@@ -10,16 +10,10 @@ import type { DASHBOARD_COURSES_QUERYResult } from "@/sanity.types";
 // Infer Sanity course fields from query result
 type SanityCourse = DASHBOARD_COURSES_QUERYResult[number];
 
-export interface CourseCardProps
-  extends Pick<
-    SanityCourse,
-    | "title"
-    | "description"
-    | "tier"
-    | "thumbnail"
-    | "moduleCount"
-    | "lessonCount"
-  > {
+export interface CourseCardProps extends Pick<
+  SanityCourse,
+  "title" | "description" | "tier" | "thumbnail" | "moduleCount" | "lessonCount"
+> {
   slug?: { current: string } | null;
   href?: string;
   completedLessonCount?: number | null;
@@ -53,11 +47,10 @@ export function CourseCard({
 
   return (
     <Link href={linkHref} className="group block">
-      <div className="relative rounded-2xl bg-zinc-900/50 border border-zinc-800 overflow-hidden hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-violet-500/5">
+      <div className="relative rounded-2xl bg-zinc-900/50 border border-zinc-800 overflow-hidden hover:border-zinc-700 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/5">
         {/* Course thumbnail/header */}
         <div
-          className={`h-36 bg-gradient-to-br ${styles.gradient} flex items-center justify-center relative overflow-hidden`}
-        >
+          className={`h-36 bg-gradient-to-br ${styles.gradient} flex items-center justify-center relative overflow-hidden`}>
           {thumbnail?.asset?.url ? (
             <Image
               src={thumbnail.asset.url}
@@ -68,7 +61,7 @@ export function CourseCard({
           ) : (
             <div className="text-6xl opacity-50">📚</div>
           )}
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-slate-900/20" />
 
           {/* Tier badge or Completed badge */}
           {isCompleted ? (
@@ -78,15 +71,14 @@ export function CourseCard({
             </div>
           ) : (
             <div
-              className={`absolute top-3 right-3 px-2.5 py-1 rounded-md text-xs font-semibold uppercase tracking-wide ${styles.badge}`}
-            >
+              className={`absolute top-3 right-3 px-2.5 py-1 rounded-md text-xs font-semibold uppercase tracking-wide ${styles.badge}`}>
               {displayTier}
             </div>
           )}
 
           {/* Locked overlay */}
           {isLocked && (
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center">
+            <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px] flex items-center justify-center">
               <div className="flex flex-col items-center gap-2">
                 <div className="w-12 h-12 rounded-full bg-zinc-800/80 flex items-center justify-center">
                   <Lock className="w-5 h-5 text-zinc-400" />
@@ -117,7 +109,7 @@ export function CourseCard({
               {moduleCount ?? 0} modules
             </span>
             <span className="flex items-center gap-1.5">
-              <Play className="w-4 h-4" />
+              <Zap className="w-4 h-4" />
               {lessonCount ?? 0} lessons
             </span>
           </div>

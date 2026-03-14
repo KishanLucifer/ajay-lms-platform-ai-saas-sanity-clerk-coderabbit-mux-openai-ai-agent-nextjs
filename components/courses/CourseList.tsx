@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Search , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { CourseCard } from "./CourseCard";
 import { TierFilterTabs, type TierFilter } from "./TierFilterTabs";
@@ -105,7 +105,7 @@ export function CourseList({
                 setTierFilter("all");
                 setSearchQuery("");
               }}
-              className="mt-2 text-sm text-violet-400 hover:text-violet-300 transition-colors"
+              className="mt-2 text-sm text-violet-400 hover:text-green-300 transition-colors"
             >
               Clear filters
             </button>

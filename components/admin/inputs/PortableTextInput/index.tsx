@@ -17,7 +17,7 @@ import { Label } from "@/components/ui/label";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { X, Loader2, ImageIcon, Upload } from "lucide-react";
+import { X, Loader2, ImageIcon, Upload , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { uploadImage } from "@/lib/actions/images";
 import { schemaDefinition } from "./schema";
 import { Toolbar } from "./Toolbar";

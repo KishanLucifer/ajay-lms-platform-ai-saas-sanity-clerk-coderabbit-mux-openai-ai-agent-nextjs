@@ -13,7 +13,7 @@ import {
   useQuery,
 } from "@sanity/sdk-react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Upload, Trash2, Download, RotateCcw } from "lucide-react";
+import { Upload, Trash2, Download, RotateCcw , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 
 /**
  * DocumentActions
@@ -98,8 +98,7 @@ function DocumentActionsContent({
               }),
             );
           }}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-zinc-400 border border-zinc-700 rounded-lg hover:bg-zinc-800 hover:border-zinc-600 hover:text-zinc-300 transition-colors"
-        >
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-zinc-400 border border-zinc-700 rounded-lg hover:bg-zinc-800 hover:border-zinc-600 hover:text-zinc-300 transition-colors">
           <RotateCcw className="h-4 w-4" />
           Discard
         </button>
@@ -117,8 +116,7 @@ function DocumentActionsContent({
               }),
             )
           }
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-zinc-400 border border-zinc-700 rounded-lg hover:bg-zinc-800 hover:border-zinc-600 hover:text-zinc-300 transition-colors"
-        >
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-zinc-400 border border-zinc-700 rounded-lg hover:bg-zinc-800 hover:border-zinc-600 hover:text-zinc-300 transition-colors">
           <Download className="h-4 w-4" />
           Unpublish
         </button>
@@ -136,8 +134,7 @@ function DocumentActionsContent({
               }),
             )
           }
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-white bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 rounded-lg shadow-lg shadow-violet-500/20 transition-all"
-        >
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-white bg-linear-to-r from-lime-400 to-green-500 hover:from-lime-300 hover:to-green-400 rounded-lg shadow-lg shadow-lime-400/20 transition-all">
           <Upload className="h-4 w-4" />
           Publish
         </button>
@@ -172,8 +169,7 @@ function DocumentActionsContent({
           router.push(getListUrl());
         }}
         className="h-8 w-8 inline-flex items-center justify-center text-zinc-500 hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
-        title="Delete"
-      >
+        title="Delete">
         <Trash2 className="h-4 w-4" />
       </button>
     </div>

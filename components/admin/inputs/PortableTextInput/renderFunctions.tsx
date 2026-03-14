@@ -76,7 +76,7 @@ export const renderDecorator: RenderDecoratorFunction = (props) => {
   }
   if (decorator === "code") {
     return (
-      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-violet-300 font-mono">
+      <code className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm text-green-300 font-mono">
         {props.children}
       </code>
     );
@@ -96,7 +96,7 @@ export const renderAnnotation: RenderAnnotationFunction = (props) => {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-violet-400 hover:text-violet-300 underline underline-offset-2 transition-colors cursor-pointer">
+        className="text-violet-400 hover:text-green-300 underline underline-offset-2 transition-colors cursor-pointer">
         {props.children}
       </a>
     );

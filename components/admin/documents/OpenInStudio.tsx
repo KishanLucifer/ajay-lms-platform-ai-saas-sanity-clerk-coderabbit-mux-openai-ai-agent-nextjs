@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { DocumentHandle } from "@sanity/sdk-react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 
 interface OpenInStudioProps {
   handle: DocumentHandle;

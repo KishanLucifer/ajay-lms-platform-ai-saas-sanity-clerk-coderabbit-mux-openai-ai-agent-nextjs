@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
+import { BookOpen, ChevronLeft, ChevronRight , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, Database, Network} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GatedFallback } from "@/components/courses/GatedFallback";
 import { useUserTier, hasTierAccess } from "@/lib/hooks/use-user-tier";
@@ -117,7 +117,7 @@ export function LessonPageContent({ lesson, userId }: LessonPageContentProps) {
             {lesson.content && (
               <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 md:p-8 mb-6">
                 <div className="flex items-center gap-2 mb-6">
-                  <BookOpen className="w-5 h-5 text-violet-400" />
+                  <Database className="w-5 h-5 text-violet-400" />
                   <h2 className="text-lg font-semibold">Lesson Notes</h2>
                 </div>
                 <LessonContent content={lesson.content} />

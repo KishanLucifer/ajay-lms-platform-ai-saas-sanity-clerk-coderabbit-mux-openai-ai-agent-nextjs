@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { useDocuments } from "@sanity/sdk-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Badge } from "@/components/ui/badge";
-import { Video, FileText, Link2 } from "lucide-react";
+import { Video, FileText, Link2 , Cpu, Zap, Orbit, Radar, Hexagon, Activity, ArrowRightCircle, ChevronRight, Database, Network} from "lucide-react";
 import { Accordion } from "@/components/ui/accordion";
 import { EmptyState } from "@/components/admin/shared";
 import { LessonItem } from "./LessonItem";
@@ -95,7 +95,7 @@ export function LessonListContent({
         <span className="flex items-center gap-1.5">
           <Badge
             variant="secondary"
-            className="bg-violet-500/10 text-violet-400 border-violet-500/30 text-xs px-1.5 py-0"
+            className="bg-green-500/10 text-violet-400 border-green-500/30 text-xs px-1.5 py-0"
           >
             <Link2 className="h-3 w-3" />
           </Badge>
